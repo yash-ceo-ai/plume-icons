@@ -1,0 +1,11 @@
+---
+import { Code } from 'astro:components';
+
+interface Props {
+  code: string;
+  lang?: 'tsx' | 'astro' | 'js' | 'sh' | 'html' | 'json' | 'css';
+}
+const { code, lang = 'tsx' } = Astro.props;
+---
+
+<Code code={code.trim()} lang={lang} themes={{ light: 'github-light', dark: 'github-dark-dimmed' }} defaultColor="dark" />

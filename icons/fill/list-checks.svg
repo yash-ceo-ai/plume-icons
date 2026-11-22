@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+  <rect width="24" height="24" fill="#fff" stroke="none"/>
+  <path d="m7.35 14.1 2 2 3.3-3.6" stroke="#000"/>
+  </mask>
+  <path d="M8 3.75h7.75a4.5 4.5 0 0 1 4.5 4.5V16"/>
+  <rect x="3.75" y="7.75" width="12.5" height="12.5" rx="4" fill="currentColor" mask="url(#cut)"/>
+</svg>

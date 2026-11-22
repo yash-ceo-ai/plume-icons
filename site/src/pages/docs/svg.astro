@@ -1,0 +1,25 @@
+---
+import Docs from '../../layouts/Docs.astro';
+import Snippet from '../../components/Snippet.astro';
+import { toSvg } from 'plume-icons';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Docs title="SVG and vanilla JS">
+  <h2>Copy and paste</h2>
+  <p>Open any icon on the <a href={`${base}/`}>icons page</a> and press Copy SVG, or Download for a file. This is what you get:</p>
+  <Snippet lang="html" code={toSvg('search').replace(/ class="[^"]*" aria-hidden="true"/, '')} />
+  <h2>Files in the package</h2>
+  <p>Every icon is in <code>plume-icons/svg/line/&lt;name&gt;.svg</code> and <code>plume-icons/svg/fill/&lt;name&gt;.svg</code>:</p>
+  <Snippet lang="js" code={`import searchUrl from 'plume-icons/svg/line/search.svg';  // with a bundler that imports SVG files`} />
+  <p>Without npm, link them from a CDN:</p>
+  <Snippet lang="html" code={`<img src="https://cdn.jsdelivr.net/npm/plume-icons/dist/svg/line/search.svg" width="24" height="24" alt="">`} />
+  <p>An <code>&lt;img&gt;</code> cannot take the text colour. Inline the SVG when the icon should follow <code>currentColor</code>.</p>
+  <h2>HTML strings</h2>
+  <p><code>toSvg()</code> returns an SVG string with unique mask ids, for vanilla JS, server templates and emails:</p>
+  <Snippet lang="js" code={`
+import { toSvg } from 'plume-icons';
+
+button.innerHTML = toSvg('search', { size: 18, class: 'icon' }) + 'Search';
+toSvg('bell', { variant: 'fill', strokeWidth: 1.6, title: 'Notifications', attrs: { 'data-x': '1' } });`} />
+</Docs>

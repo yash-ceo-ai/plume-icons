@@ -1,0 +1,253 @@
+---
+// The icon browser: search, filter, preview at any size, stroke and theme, then copy or download.
+import Base from '../layouts/Base.astro';
+import Icon from 'plume-icons/astro';
+import { icons, iconNames } from 'plume-icons';
+import meta from 'plume-icons/meta.json';
+
+const m = meta.icons as Record<string, { category: string; tags: string[]; phosphor?: string[]; lucide?: string[] }>;
+const used = meta.categories.filter((c) => iconNames.some((n) => m[n]?.category === c));
+const label = (c: string) => c[0].toUpperCase() + c.slice(1);
+const data = JSON.stringify({ icons, meta: m, version: meta.version });
+---
+
+<Base title="Plume Icons: soft, rounded icons for SVG, React and Astro">
+  <main>
+    <section class="hero">
+      <h1>Soft, rounded icons.<br />Line and fill. Free.</h1>
+      <p>{iconNames.length} icons on a 24 grid with round joins and squircle frames. Use them as SVG, in React and Next.js, in Astro, or through Iconify.</p>
+      <div class="install">
+        <code id="install-cmd">npm install plume-icons</code>
+        <button class="btn" type="button" data-copy-text="npm install plume-icons">Copy</button>
+        <a class="btn primary" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/docs/`}>Get started <Icon name="arrow-right" size={16} /></a>
+      </div>
+    </section>
+
+    <section class="tools" aria-label="Filters and preview settings">
+      <label class="search">
+        <Icon name="search" size={18} />
+        <span class="sr-only">Search icons</span>
+        <input id="q" type="search" placeholder={`Search ${iconNames.length} icons`} autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+      <select id="cat" aria-label="Category">
+        <option value="">All categories</option>
+        {used.map((c) => <option value={c}>{label(c)}</option>)}
+      </select>
+      <div class="seg" role="group" aria-label="Variant">
+        <button type="button" data-variant="line" aria-pressed="true">Line</button>
+        <button type="button" data-variant="fill" aria-pressed="false">Fill</button>
+      </div>
+      <select id="size" aria-label="Size">
+        {[16, 18, 20, 24, 32, 40].map((s) => <option value={s} selected={s === 24}>{s}px</option>)}
+      </select>
+      <label class="stroke">Stroke <input id="sw" type="range" min="1.2" max="2.4" step="0.1" value="1.8" /><output id="swv">1.8</output></label>
+    </section>
+
+    <p class="count" id="count" aria-live="polite">{iconNames.length} icons</p>
+    <ul class="grid" id="grid" data-variant="line">
+      {
+        iconNames.map((name) => (
+          <li data-name={name} data-cat={m[name].category} data-tags={[name, ...m[name].tags, ...(m[name].phosphor ?? []), ...(m[name].lucide ?? [])].join(' ')}>
+            <button type="button" data-open={name} aria-label={name}>
+              <Icon name={name} class="v-line" />
+              <Icon name={name} variant="fill" class="v-fill" />
+              <span>{name}</span>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="empty" id="empty" hidden>No icons match. <a href="https://github.com/yash-ceo-ai/plume-icons/issues/new?title=Icon%20request:%20">Request one</a>.</p>
+  </main>
+
+  <dialog id="detail" aria-labelledby="d-name">
+    <div class="d-head">
+      <h2 id="d-name">icon</h2>
+      <button class="btn btn-icon" type="button" data-close aria-label="Close"><Icon name="x" size={18} /></button>
+    </div>
+    <div class="d-body">
+      <div class="d-preview" id="d-preview"></div>
+      <div class="d-info">
+        <div class="seg" role="group" aria-label="Variant">
+          <button type="button" data-dvariant="line" aria-pressed="true">Line</button>
+          <button type="button" data-dvariant="fill" aria-pressed="false">Fill</button>
+        </div>
+        <dl>
+          <dt>Category</dt><dd id="d-cat"></dd>
+          <dt>Tags</dt><dd id="d-tags"></dd>
+          <dt>Replaces</dt><dd id="d-alt"></dd>
+        </dl>
+        <div class="d-actions">
+          <button class="btn primary" type="button" data-copy="svg">Copy SVG</button>
+          <button class="btn" type="button" data-copy="jsx">Copy JSX</button>
+          <button class="btn" type="button" data-copy="astro">Copy Astro</button>
+          <button class="btn" type="button" data-download>Download</button>
+        </div>
+        <pre id="d-code"><code></code></pre>
+      </div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script type="application/json" id="plume-data" set:html={data} />
+  <script>
+    type Data = { icons: Record<string, { line: string; fill: string }>; meta: Record<string, { category: string; tags: string[]; phosphor?: string[]; lucide?: string[] }> };
+    const data: Data = JSON.parse(document.getElementById('plume-data')!.textContent!);
+    const $ = <T extends Element = HTMLElement>(s: string) => document.querySelector<T>(s)!;
+    const grid = $('#grid');
+    const items = [...grid.querySelectorAll<HTMLLIElement>('li')];
+    const state = { q: '', cat: '', variant: 'line' as 'line' | 'fill', size: 24, sw: 1.8, open: '', dvariant: 'line' as 'line' | 'fill' };
+
+    function filter() {
+      const words = state.q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      let shown = 0;
+      for (const li of items) {
+        const hay = li.dataset.tags!.toLowerCase();
+        const ok = (!state.cat || li.dataset.cat === state.cat) && words.every((w) => hay.includes(w));
+        li.hidden = !ok;
+        if (ok) shown++;
+      }
+      $('#count').textContent = `${shown} icon${shown === 1 ? '' : 's'}`;
+      $('#empty').hidden = shown > 0;
+    }
+    $<HTMLInputElement>('#q').addEventListener('input', (e) => { state.q = (e.target as HTMLInputElement).value; filter(); });
+    $<HTMLSelectElement>('#cat').addEventListener('change', (e) => { state.cat = (e.target as HTMLSelectElement).value; filter(); });
+    document.querySelectorAll<HTMLButtonElement>('[data-variant]').forEach((b) => b.addEventListener('click', () => {
+      state.variant = b.dataset.variant as 'line' | 'fill';
+      grid.dataset.variant = state.variant;
+      document.querySelectorAll('[data-variant]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    }));
+    $<HTMLSelectElement>('#size').addEventListener('change', (e) => { state.size = +(e.target as HTMLSelectElement).value; document.documentElement.style.setProperty('--size', `${state.size}px`); });
+    $<HTMLInputElement>('#sw').addEventListener('input', (e) => { state.sw = +(e.target as HTMLInputElement).value; $('#swv').textContent = state.sw.toFixed(1); document.documentElement.style.setProperty('--sw', String(state.sw)); });
+    addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement?.tagName !== 'INPUT') { e.preventDefault(); $<HTMLInputElement>('#q').focus(); }
+    });
+
+    const pascal = (n: string) => n.split('-').map((p) => p[0].toUpperCase() + p.slice(1)).join('');
+    function svgString(name: string, v: 'line' | 'fill') {
+      const sw = state.sw.toFixed(1).replace(/\.0$/, '');
+      const body = data.icons[name][v].split('%id%').join(`plume-${name}-${v}-`);
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="${state.size}" height="${state.size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
+    }
+    function props(v: 'line' | 'fill') {
+      const p: string[] = [];
+      if (state.size !== 24) p.push(`size={${state.size}}`);
+      if (v === 'fill') p.push('variant="fill"');
+      if (state.sw !== 1.8) p.push(`strokeWidth={${state.sw.toFixed(1)}}`);
+      return p.length ? ' ' + p.join(' ') : '';
+    }
+    const snippet = {
+      svg: (n: string, v: 'line' | 'fill') => svgString(n, v),
+      jsx: (n: string, v: 'line' | 'fill') => `import { ${pascal(n)} } from 'plume-icons/react';\n\n<${pascal(n)}${props(v)} />`,
+      astro: (n: string, v: 'line' | 'fill') => `---\nimport Icon from 'plume-icons/astro';\n---\n<Icon name="${n}"${props(v)} />`,
+    };
+    let lastKind: keyof typeof snippet = 'jsx';
+
+    const dlg = $<HTMLDialogElement>('#detail');
+    function renderDetail() {
+      const n = state.open, v = state.dvariant, m = data.meta[n];
+      $('#d-name').textContent = n;
+      $('#d-preview').innerHTML = svgString(n, v).replace(/width="\d+" height="\d+"/, 'width="96" height="96"');
+      $('#d-cat').textContent = m.category[0].toUpperCase() + m.category.slice(1);
+      $('#d-tags').textContent = m.tags.join(', ');
+      const alt = [...(m.phosphor ?? []).map((p) => `Phosphor ${p}`), ...(m.lucide ?? []).map((l) => `Lucide ${l}`)];
+      $('#d-alt').textContent = alt.join(', ') || 'None';
+      $('#d-code code').textContent = snippet[lastKind](n, v);
+      dlg.querySelectorAll('[data-dvariant]').forEach((x) => x.setAttribute('aria-pressed', String((x as HTMLElement).dataset.dvariant === v)));
+    }
+    grid.addEventListener('click', (e) => {
+      const b = (e.target as Element).closest<HTMLButtonElement>('[data-open]');
+      if (!b) return;
+      state.open = b.dataset.open!;
+      state.dvariant = state.variant;
+      renderDetail();
+      dlg.showModal();
+      history.replaceState(null, '', `#${state.open}`);
+    });
+    dlg.querySelectorAll<HTMLButtonElement>('[data-dvariant]').forEach((b) => b.addEventListener('click', () => { state.dvariant = b.dataset.dvariant as 'line' | 'fill'; renderDetail(); }));
+    dlg.querySelector('[data-close]')!.addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', () => history.replaceState(null, '', location.pathname + location.search));
+
+    let toastTimer = 0;
+    function toast(msg: string) {
+      const t = $('#toast');
+      t.textContent = msg;
+      t.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => (t.hidden = true), 1600);
+    }
+    async function copy(text: string, what: string) {
+      try { await navigator.clipboard.writeText(text); toast(`${what} copied`); } catch { toast('Copy failed. Select the code and copy it.'); }
+    }
+    dlg.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) => b.addEventListener('click', () => {
+      lastKind = b.dataset.copy as keyof typeof snippet;
+      renderDetail();
+      copy(snippet[lastKind](state.open, state.dvariant), b.textContent!.replace('Copy ', ''));
+    }));
+    dlg.querySelector('[data-download]')!.addEventListener('click', () => {
+      const url = URL.createObjectURL(new Blob([svgString(state.open, state.dvariant) + '\n'], { type: 'image/svg+xml' }));
+      const a = Object.assign(document.createElement('a'), { href: url, download: `${state.open}-${state.dvariant}.svg` });
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+    document.querySelectorAll<HTMLButtonElement>('[data-copy-text]').forEach((b) => b.addEventListener('click', () => copy(b.dataset.copyText!, 'Command')));
+
+    const hash = decodeURIComponent(location.hash.slice(1));
+    if (hash && data.icons[hash]) { state.open = hash; renderDetail(); dlg.showModal(); }
+  </script>
+
+  <style>
+    :root { --size: 24px; --sw: 1.8; }
+    main { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .hero { padding: 56px 0 32px; }
+    h1 { font-size: 44px; line-height: 48px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 16px; }
+    .hero p { color: var(--text-2); font-size: 16px; line-height: 24px; max-width: 560px; margin: 0 0 24px; }
+    .install { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .install code { height: 32px; display: inline-flex; align-items: center; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+    .tools { position: sticky; top: 56px; z-index: 5; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 12px 0; background: var(--bg); }
+    .search { flex: 1 1 280px; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--muted); }
+    .search:focus-within { border-color: var(--ring); }
+    .search input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; color: var(--text); font: inherit; font-size: 14px; }
+    kbd { border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font-size: 11px; }
+    select { height: 40px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--text); font: inherit; }
+    .seg { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+    .seg button { height: 32px; padding: 0 12px; border: 0; border-radius: 6px; background: none; color: var(--muted); font: 500 13px inherit; font-family: inherit; cursor: pointer; }
+    .seg button[aria-pressed='true'] { background: var(--raised); color: var(--text); }
+    .stroke { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
+    .stroke input { accent-color: var(--text); }
+    .stroke output { width: 24px; color: var(--text); font-variant-numeric: tabular-nums; }
+    .count { color: var(--muted); font-size: 12px; margin: 4px 0 12px; }
+    .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 8px; }
+    .grid button { width: 100%; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 12px 6px 10px; border: 1px solid var(--line-soft); border-radius: 10px; background: var(--panel); color: var(--text); cursor: pointer; font: inherit; }
+    .grid button:hover { border-color: var(--ring); }
+    .grid button span { font-size: 11px; line-height: 14px; color: var(--muted); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .grid :global(svg) { width: var(--size); height: var(--size); stroke-width: var(--sw); flex: none; }
+    .grid[data-variant='line'] :global(.v-fill), .grid[data-variant='fill'] :global(.v-line) { display: none; }
+    .empty { color: var(--muted); padding: 32px 0; text-align: center; }
+    dialog { width: min(720px, calc(100vw - 24px)); padding: 0; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); color: var(--text); }
+    dialog::backdrop { background: rgb(0 0 0 / 0.5); }
+    .d-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 12px 12px 20px; border-bottom: 1px solid var(--line-soft); }
+    .d-head h2 { margin: 0; font-size: 16px; font-weight: 500; }
+    .d-body { display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 20px; }
+    .d-preview { display: grid; place-items: center; aspect-ratio: 1; border: 1px solid var(--line-soft); border-radius: 10px; background: var(--bg); background-image: linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px); background-size: 25% 25%; }
+    .d-info { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+    .d-info .seg { align-self: flex-start; }
+    dl { display: grid; grid-template-columns: 80px 1fr; gap: 6px 12px; margin: 0; font-size: 13px; }
+    dt { color: var(--muted); }
+    dd { margin: 0; }
+    .d-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    pre { margin: 0; padding: 12px; border: 1px solid var(--line-soft); border-radius: 8px; background: var(--bg); overflow: auto; max-height: 140px; white-space: pre-wrap; word-break: break-all; font-size: 12px; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 100; padding: 8px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    @media (max-width: 640px) {
+      main { padding: 0 12px; }
+      h1 { font-size: 32px; line-height: 36px; }
+      .hero { padding: 32px 0 20px; }
+      .stroke { display: none; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); }
+      .d-body { grid-template-columns: 1fr; }
+      .d-preview { max-width: 160px; justify-self: center; width: 100%; }
+    }
+  </style>
+</Base>

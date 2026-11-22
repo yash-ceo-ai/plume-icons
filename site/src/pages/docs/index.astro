@@ -1,0 +1,34 @@
+---
+import Docs from '../../layouts/Docs.astro';
+import Snippet from '../../components/Snippet.astro';
+import Icon from 'plume-icons/astro';
+import { iconNames } from 'plume-icons';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Docs title="Getting started">
+  <p>Plume Icons is a set of {iconNames.length} soft, rounded icons. Each one has a <code>line</code> and a <code>fill</code> version, drawn on a 24 grid with a 1.8 line and round joins. They are MIT licensed: use them in any project, paid or free.</p>
+  <h2>Install</h2>
+  <Snippet lang="sh" code="npm install plume-icons" />
+  <p>One package holds every format. Pick the guide for your stack:</p>
+  <table>
+    <thead><tr><th>You use</th><th>Import from</th><th>Guide</th></tr></thead>
+    <tbody>
+      <tr><td>React, Next.js</td><td><code>plume-icons/react</code></td><td><a href={`${base}/docs/react/`}>React and Next.js</a></td></tr>
+      <tr><td>Astro</td><td><code>plume-icons/astro</code></td><td><a href={`${base}/docs/astro/`}>Astro</a></td></tr>
+      <tr><td>HTML, vanilla JS, emails</td><td><code>plume-icons</code>, <code>plume-icons/svg/*</code></td><td><a href={`${base}/docs/svg/`}>SVG and vanilla JS</a></td></tr>
+      <tr><td>Iconify, astro-icon, unplugin-icons</td><td><code>plume-icons/plume.json</code></td><td><a href={`${base}/docs/iconify/`}>Iconify and astro-icon</a></td></tr>
+    </tbody>
+  </table>
+  <h2>Line and fill</h2>
+  <p>
+    <Icon name="bell" size={28} /> <Icon name="bell" variant="fill" size={28} />
+    &nbsp; <Icon name="chats" size={28} /> <Icon name="chats" variant="fill" size={28} />
+    &nbsp; <Icon name="dashboard" size={28} /> <Icon name="dashboard" variant="fill" size={28} />
+  </p>
+  <p>A common pattern: line icons everywhere, and the fill version for the selected item in a sidebar or tab bar.</p>
+  <h2>Colour and size</h2>
+  <p>Icons use <code>currentColor</code>, so they take the colour of the text around them. Set <code>color</code> on the icon or its parent to change it. The default size is 24; 18 or 20 suits navigation and buttons. At 16 and below a lighter line reads better (<code>strokeWidth=&#123;1.6&#125;</code>).</p>
+  <h2>Accessibility</h2>
+  <p>Icons are hidden from screen readers by default (<code>aria-hidden="true"</code>). When an icon is the only content of a button, give the button an <code>aria-label</code>. When the icon itself carries meaning, pass <code>title</code> (React) or <code>label</code> (Astro) and it gets <code>role="img"</code>.</p>
+</Docs>

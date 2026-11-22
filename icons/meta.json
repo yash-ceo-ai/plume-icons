@@ -1,0 +1,711 @@
+{
+  "arrow-down": {
+    "category": "navigation",
+    "tags": [
+      "down",
+      "decrease",
+      "bottom"
+    ],
+    "phosphor": [
+      "arrow-down"
+    ],
+    "lucide": [
+      "arrow-down"
+    ]
+  },
+  "arrow-left": {
+    "category": "navigation",
+    "tags": [
+      "back",
+      "previous",
+      "return"
+    ],
+    "phosphor": [
+      "arrow-left"
+    ],
+    "lucide": [
+      "arrow-left"
+    ]
+  },
+  "arrow-right": {
+    "category": "navigation",
+    "tags": [
+      "next",
+      "forward",
+      "go"
+    ],
+    "phosphor": [
+      "arrow-right"
+    ],
+    "lucide": [
+      "arrow-right"
+    ]
+  },
+  "arrow-up": {
+    "category": "navigation",
+    "tags": [
+      "up",
+      "increase",
+      "top"
+    ],
+    "phosphor": [
+      "arrow-up"
+    ],
+    "lucide": [
+      "arrow-up"
+    ]
+  },
+  "arrow-up-right": {
+    "category": "navigation",
+    "tags": [
+      "open",
+      "diagonal",
+      "growth"
+    ],
+    "phosphor": [
+      "arrow-up-right"
+    ],
+    "lucide": [
+      "arrow-up-right"
+    ]
+  },
+  "bell": {
+    "category": "communication",
+    "tags": [
+      "notifications",
+      "alert",
+      "alarm"
+    ],
+    "phosphor": [
+      "bell"
+    ],
+    "lucide": [
+      "bell"
+    ]
+  },
+  "bell-ring": {
+    "category": "communication",
+    "tags": [
+      "notifications",
+      "ringing",
+      "alarm",
+      "alert"
+    ],
+    "phosphor": [
+      "bell-ringing"
+    ],
+    "lucide": [
+      "bell-ring"
+    ]
+  },
+  "bot": {
+    "category": "ai",
+    "tags": [
+      "robot",
+      "agent",
+      "assistant",
+      "otto"
+    ],
+    "phosphor": [
+      "robot"
+    ],
+    "lucide": [
+      "bot"
+    ]
+  },
+  "brand": {
+    "category": "content",
+    "tags": [
+      "company",
+      "logo",
+      "mark",
+      "identity",
+      "buildings"
+    ],
+    "phosphor": [
+      "buildings",
+      "diamond"
+    ],
+    "lucide": [
+      "building-2",
+      "gem"
+    ]
+  },
+  "calendar": {
+    "category": "time",
+    "tags": [
+      "date",
+      "schedule",
+      "event",
+      "day"
+    ],
+    "phosphor": [
+      "calendar-blank",
+      "calendar"
+    ],
+    "lucide": [
+      "calendar"
+    ]
+  },
+  "caret-down": {
+    "category": "navigation",
+    "tags": [
+      "chevron",
+      "expand",
+      "dropdown"
+    ],
+    "phosphor": [
+      "caret-down"
+    ],
+    "lucide": [
+      "chevron-down"
+    ]
+  },
+  "caret-left": {
+    "category": "navigation",
+    "tags": [
+      "chevron",
+      "back",
+      "previous"
+    ],
+    "phosphor": [
+      "caret-left"
+    ],
+    "lucide": [
+      "chevron-left"
+    ]
+  },
+  "caret-right": {
+    "category": "navigation",
+    "tags": [
+      "chevron",
+      "next",
+      "forward"
+    ],
+    "phosphor": [
+      "caret-right"
+    ],
+    "lucide": [
+      "chevron-right"
+    ]
+  },
+  "caret-up": {
+    "category": "navigation",
+    "tags": [
+      "chevron",
+      "collapse"
+    ],
+    "phosphor": [
+      "caret-up"
+    ],
+    "lucide": [
+      "chevron-up"
+    ]
+  },
+  "caret-up-down": {
+    "category": "navigation",
+    "tags": [
+      "select",
+      "switch",
+      "chevrons",
+      "sort"
+    ],
+    "phosphor": [
+      "caret-up-down"
+    ],
+    "lucide": [
+      "chevrons-up-down"
+    ]
+  },
+  "chats": {
+    "category": "communication",
+    "tags": [
+      "prompts",
+      "messages",
+      "conversation",
+      "comments"
+    ],
+    "phosphor": [
+      "chats",
+      "chat-circle-text",
+      "chat-centered-text"
+    ],
+    "lucide": [
+      "messages-square"
+    ]
+  },
+  "check": {
+    "category": "actions",
+    "tags": [
+      "done",
+      "yes",
+      "confirm",
+      "tick"
+    ],
+    "phosphor": [
+      "check"
+    ],
+    "lucide": [
+      "check"
+    ]
+  },
+  "dashboard": {
+    "category": "navigation",
+    "tags": [
+      "overview",
+      "panels",
+      "layout",
+      "home"
+    ],
+    "phosphor": [
+      "layout"
+    ],
+    "lucide": [
+      "layout-dashboard",
+      "layout-panel-left"
+    ]
+  },
+  "dots": {
+    "category": "actions",
+    "tags": [
+      "more",
+      "ellipsis",
+      "options",
+      "menu"
+    ],
+    "phosphor": [
+      "dots-three"
+    ],
+    "lucide": [
+      "ellipsis"
+    ]
+  },
+  "dots-vertical": {
+    "category": "actions",
+    "tags": [
+      "more",
+      "ellipsis",
+      "options",
+      "kebab"
+    ],
+    "phosphor": [
+      "dots-three-vertical"
+    ],
+    "lucide": [
+      "ellipsis-vertical"
+    ]
+  },
+  "expand": {
+    "category": "navigation",
+    "tags": [
+      "fullscreen",
+      "maximize",
+      "enlarge"
+    ],
+    "phosphor": [
+      "arrows-out"
+    ],
+    "lucide": [
+      "expand",
+      "maximize-2"
+    ]
+  },
+  "external-link": {
+    "category": "navigation",
+    "tags": [
+      "open",
+      "new tab",
+      "outside",
+      "launch"
+    ],
+    "phosphor": [
+      "arrow-square-out"
+    ],
+    "lucide": [
+      "external-link",
+      "square-arrow-out-up-right"
+    ]
+  },
+  "gear": {
+    "category": "actions",
+    "tags": [
+      "settings",
+      "preferences",
+      "cog",
+      "options"
+    ],
+    "phosphor": [
+      "gear",
+      "gear-six"
+    ],
+    "lucide": [
+      "settings",
+      "cog"
+    ]
+  },
+  "globe": {
+    "category": "navigation",
+    "tags": [
+      "web",
+      "world",
+      "website",
+      "language",
+      "internet"
+    ],
+    "phosphor": [
+      "globe",
+      "globe-simple"
+    ],
+    "lucide": [
+      "globe",
+      "earth"
+    ]
+  },
+  "grid": {
+    "category": "navigation",
+    "tags": [
+      "apps",
+      "tiles",
+      "squares",
+      "layout"
+    ],
+    "phosphor": [
+      "squares-four"
+    ],
+    "lucide": [
+      "layout-grid"
+    ]
+  },
+  "help": {
+    "category": "status",
+    "tags": [
+      "question",
+      "support",
+      "faq"
+    ],
+    "phosphor": [
+      "question"
+    ],
+    "lucide": [
+      "circle-help",
+      "badge-help"
+    ]
+  },
+  "home": {
+    "category": "navigation",
+    "tags": [
+      "house",
+      "start",
+      "main"
+    ],
+    "phosphor": [
+      "house",
+      "house-simple"
+    ],
+    "lucide": [
+      "house",
+      "home"
+    ]
+  },
+  "info": {
+    "category": "status",
+    "tags": [
+      "about",
+      "details",
+      "information"
+    ],
+    "phosphor": [
+      "info"
+    ],
+    "lucide": [
+      "info",
+      "badge-info"
+    ]
+  },
+  "link": {
+    "category": "actions",
+    "tags": [
+      "url",
+      "chain",
+      "hyperlink",
+      "attach"
+    ],
+    "phosphor": [
+      "link",
+      "link-simple"
+    ],
+    "lucide": [
+      "link",
+      "link-2"
+    ]
+  },
+  "list": {
+    "category": "content",
+    "tags": [
+      "bullets",
+      "items",
+      "rows"
+    ],
+    "phosphor": [
+      "list-bullets"
+    ],
+    "lucide": [
+      "list"
+    ]
+  },
+  "list-checks": {
+    "category": "actions",
+    "tags": [
+      "todo",
+      "tasks",
+      "checklist",
+      "done"
+    ],
+    "phosphor": [
+      "list-checks",
+      "check-square"
+    ],
+    "lucide": [
+      "list-checks",
+      "square-check"
+    ]
+  },
+  "menu": {
+    "category": "navigation",
+    "tags": [
+      "hamburger",
+      "list",
+      "nav"
+    ],
+    "phosphor": [
+      "list"
+    ],
+    "lucide": [
+      "menu"
+    ]
+  },
+  "minus": {
+    "category": "actions",
+    "tags": [
+      "remove",
+      "subtract",
+      "less"
+    ],
+    "phosphor": [
+      "minus"
+    ],
+    "lucide": [
+      "minus"
+    ]
+  },
+  "moon": {
+    "category": "status",
+    "tags": [
+      "dark",
+      "night",
+      "theme",
+      "sleep"
+    ],
+    "phosphor": [
+      "moon"
+    ],
+    "lucide": [
+      "moon"
+    ]
+  },
+  "panel-right": {
+    "category": "navigation",
+    "tags": [
+      "sidebar",
+      "details",
+      "drawer",
+      "inspector"
+    ],
+    "phosphor": [
+      "sidebar"
+    ],
+    "lucide": [
+      "panel-right"
+    ]
+  },
+  "plus": {
+    "category": "actions",
+    "tags": [
+      "add",
+      "new",
+      "create"
+    ],
+    "phosphor": [
+      "plus"
+    ],
+    "lucide": [
+      "plus"
+    ]
+  },
+  "radar": {
+    "category": "status",
+    "tags": [
+      "checks",
+      "scan",
+      "activity",
+      "loader",
+      "monitor"
+    ],
+    "phosphor": [
+      "pulse",
+      "circle-notch"
+    ],
+    "lucide": [
+      "radar",
+      "loader"
+    ]
+  },
+  "search": {
+    "category": "navigation",
+    "tags": [
+      "find",
+      "magnifier",
+      "lookup",
+      "zoom"
+    ],
+    "phosphor": [
+      "magnifying-glass"
+    ],
+    "lucide": [
+      "search"
+    ]
+  },
+  "sidebar": {
+    "category": "navigation",
+    "tags": [
+      "panel",
+      "collapse",
+      "layout",
+      "drawer"
+    ],
+    "phosphor": [
+      "sidebar-simple"
+    ],
+    "lucide": [
+      "panel-left"
+    ]
+  },
+  "sign-in": {
+    "category": "people",
+    "tags": [
+      "log in",
+      "enter",
+      "login"
+    ],
+    "phosphor": [
+      "sign-in"
+    ],
+    "lucide": [
+      "log-in"
+    ]
+  },
+  "sign-out": {
+    "category": "people",
+    "tags": [
+      "log out",
+      "exit",
+      "logout",
+      "leave"
+    ],
+    "phosphor": [
+      "sign-out"
+    ],
+    "lucide": [
+      "log-out"
+    ]
+  },
+  "sort": {
+    "category": "actions",
+    "tags": [
+      "order",
+      "arrows",
+      "reorder"
+    ],
+    "phosphor": [
+      "arrows-down-up"
+    ],
+    "lucide": [
+      "arrow-up-down"
+    ]
+  },
+  "sun": {
+    "category": "status",
+    "tags": [
+      "light",
+      "day",
+      "theme",
+      "brightness"
+    ],
+    "phosphor": [
+      "sun"
+    ],
+    "lucide": [
+      "sun"
+    ]
+  },
+  "user": {
+    "category": "people",
+    "tags": [
+      "person",
+      "account",
+      "profile",
+      "avatar"
+    ],
+    "phosphor": [
+      "user"
+    ],
+    "lucide": [
+      "user"
+    ]
+  },
+  "user-plus": {
+    "category": "people",
+    "tags": [
+      "invite",
+      "add user",
+      "member",
+      "join"
+    ],
+    "phosphor": [
+      "user-plus"
+    ],
+    "lucide": [
+      "user-plus"
+    ]
+  },
+  "users": {
+    "category": "people",
+    "tags": [
+      "team",
+      "group",
+      "members",
+      "people"
+    ],
+    "phosphor": [
+      "users"
+    ],
+    "lucide": [
+      "users"
+    ]
+  },
+  "x": {
+    "category": "actions",
+    "tags": [
+      "close",
+      "cancel",
+      "remove",
+      "dismiss"
+    ],
+    "phosphor": [
+      "x"
+    ],
+    "lucide": [
+      "x"
+    ]
+  }
+}

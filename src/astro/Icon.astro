@@ -1,0 +1,41 @@
+---
+// <Icon name="search" />: a Plume icon as inline SVG, rendered on the server (no client JavaScript).
+import type { HTMLAttributes } from 'astro/types';
+import { icons, type IconName } from '../data.js';
+import { nextId } from './uid.js';
+
+export interface Props extends Omit<HTMLAttributes<'svg'>, 'name'> {
+  /** The icon's name, e.g. "search" or "caret-down". */
+  name: IconName;
+  /** Width and height (default 24). */
+  size?: number | string;
+  /** "line" (default) or "fill". */
+  variant?: 'line' | 'fill';
+  /** Line weight on the 24 grid (default 1.8). */
+  strokeWidth?: number | string;
+  /** Accessible name. Without it the icon is hidden from screen readers. */
+  label?: string;
+}
+
+const { name, size = 24, variant = 'line', strokeWidth = 1.8, label, class: cls, ...rest } = Astro.props;
+const data = icons[name];
+if (!data) throw new Error(`plume-icons: unknown icon "${name}"`);
+const body = data[variant].split('%id%').join(`plume-${nextId()}-`);
+const a11y = label ? { role: 'img', 'aria-label': label } : { 'aria-hidden': 'true' };
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width={strokeWidth}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class:list={['plume', `plume-${name}`, cls]}
+  {...a11y}
+  {...rest}
+  set:html={body}
+/>

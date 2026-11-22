@@ -1,0 +1,62 @@
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+:root,
+[data-theme='dark'] {
+  --bg: #121110;
+  --panel: #171615;
+  --raised: #232221;
+  --line: #2a2927;
+  --line-soft: #1e1d1c;
+  --text: #ecebe9;
+  --text-2: #aaa8a5;
+  --muted: #898784;
+  --primary: #ecebe9;
+  --on-primary: #121110;
+  --ring: #6f6d6a;
+  color-scheme: dark;
+}
+[data-theme='light'] {
+  --bg: #f3f2f0;
+  --panel: #ffffff;
+  --raised: #efeeec;
+  --line: #e4e3e0;
+  --line-soft: #ecebe9;
+  --text: #121110;
+  --text-2: #31302e;
+  --muted: #676563;
+  --primary: #121110;
+  --on-primary: #f3f2f0;
+  --ring: #a3a19e;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--text); }
+body {
+  margin: 0;
+  font: 14px/20px 'Geist Variable', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+code, pre, kbd { font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 13px; }
+:not(pre) > code { background: var(--raised); border-radius: 6px; padding: 1px 6px; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px;
+  border-radius: 8px; border: 1px solid var(--line); background: var(--raised); color: var(--text);
+  font: 500 12px/1 inherit; font-family: inherit; cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.btn:hover { border-color: var(--ring); }
+.btn.primary { background: var(--primary); color: var(--on-primary); border-color: transparent; }
+.btn-icon { width: 32px; padding: 0; justify-content: center; background: none; border-color: transparent; color: var(--muted); }
+.btn-icon:hover { background: var(--raised); color: var(--text); border-color: transparent; }
+
+.astro-code { border-radius: 10px; padding: 14px 16px; border: 1px solid var(--line); overflow-x: auto; margin: 12px 0; }
+[data-theme='light'] .astro-code, [data-theme='light'] .astro-code span { color: var(--shiki-light) !important; background-color: var(--shiki-light-bg) !important; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+[data-theme='dark'] .astro-code { background-color: var(--panel) !important; }

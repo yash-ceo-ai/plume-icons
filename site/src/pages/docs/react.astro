@@ -1,0 +1,67 @@
+---
+import Docs from '../../layouts/Docs.astro';
+import Snippet from '../../components/Snippet.astro';
+---
+
+<Docs title="React and Next.js">
+  <Snippet lang="sh" code="npm install plume-icons" />
+  <Snippet code={`
+import { Search, Bell, Gear } from 'plume-icons/react';
+
+export function Toolbar() {
+  return (
+    <nav>
+      <Search size={18} />
+      <Bell variant="fill" />
+      <Gear strokeWidth={1.6} title="Settings" />
+    </nav>
+  );
+}`} />
+  <p>Each icon is its own component, named in PascalCase (<code>caret-down</code> is <code>CaretDown</code>). Every component is also exported with an <code>Icon</code> suffix (<code>SearchIcon</code>, <code>LinkIcon</code>) so it never clashes with names like Next's <code>Link</code> or <code>Image</code>. Import only the icons you use; bundlers drop the rest.</p>
+  <h2>Props</h2>
+  <table>
+    <thead><tr><th>Prop</th><th>Default</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><code>size</code></td><td><code>24</code></td><td>Width and height. Numbers are pixels; any CSS length works (<code>"1em"</code>).</td></tr>
+      <tr><td><code>variant</code></td><td><code>"line"</code></td><td><code>"line"</code> or <code>"fill"</code>.</td></tr>
+      <tr><td><code>strokeWidth</code></td><td><code>1.8</code></td><td>Line weight on the 24 grid. Also sets the width of the cuts in fill icons.</td></tr>
+      <tr><td><code>title</code></td><td></td><td>Accessible name. Adds <code>role="img"</code>; without it (or <code>aria-label</code>) the icon is <code>aria-hidden</code>.</td></tr>
+      <tr><td>SVG props</td><td></td><td><code>className</code>, <code>style</code>, <code>onClick</code>, <code>ref</code> and any other SVG attribute go on the <code>&lt;svg&gt;</code>.</td></tr>
+    </tbody>
+  </table>
+  <h2>Next.js App Router</h2>
+  <p>The components work in Server Components with no <code>'use client'</code>. They only use <code>useId</code>, which React allows on the server, to give each fill icon its own mask id. In a Client Component they work the same way:</p>
+  <Snippet code={`
+'use client';
+import { useState } from 'react';
+import { Bell } from 'plume-icons/react';
+
+export function NotifyButton() {
+  const [on, setOn] = useState(false);
+  return (
+    <button onClick={() => setOn(!on)} aria-pressed={on} aria-label="Notifications">
+      <Bell variant={on ? 'fill' : 'line'} size={20} />
+    </button>
+  );
+}`} />
+  <h2>Picking an icon by name</h2>
+  <p>When the icon comes from data, use <code>&lt;Icon name&gt;</code>. It loads every icon, so prefer named imports when you can.</p>
+  <Snippet code={`
+import { Icon, type IconName } from 'plume-icons/react';
+
+const items: { label: string; icon: IconName }[] = [
+  { label: 'Home', icon: 'home' },
+  { label: 'Settings', icon: 'gear' },
+];
+
+items.map((it) => <Icon key={it.icon} name={it.icon} size={18} />);`} />
+  <h2>Your own icons</h2>
+  <p><code>createPlumeIcon(name, &#123; line, fill &#125;)</code> turns your own 24-grid markup into a component with the same props. Write mask ids as <code>%id%cut</code> so each render gets unique ids.</p>
+  <Snippet code={`
+import { createPlumeIcon } from 'plume-icons/react';
+
+export const Dot = createPlumeIcon('dot', { line: '<circle cx="12" cy="12" r="4"/>' }, 'Dot');`} />
+  <h2>Styling</h2>
+  <p>Every icon has the classes <code>plume</code> and <code>plume-&lt;name&gt;</code>. CSS <code>stroke-width</code> overrides the prop, so one rule can lighten all small icons:</p>
+  <Snippet lang="css" code={`.table .plume { width: 16px; height: 16px; stroke-width: 1.6; }`} />
+</Docs>

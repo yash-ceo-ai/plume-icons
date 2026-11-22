@@ -1,0 +1,48 @@
+---
+import Docs from '../../layouts/Docs.astro';
+import Snippet from '../../components/Snippet.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Docs title="Astro">
+  <Snippet lang="sh" code="npm install plume-icons" />
+  <Snippet lang="astro" code={`
+---
+import Icon from 'plume-icons/astro';
+---
+<Icon name="search" size={18} />
+<Icon name="bell" variant="fill" label="Notifications" />
+<Icon name="gear" strokeWidth={1.6} class="muted" />`} />
+  <p>The component renders inline SVG on the server and ships no JavaScript. <code>name</code> is typed, so <code>astro check</code> catches a misspelt icon.</p>
+  <h2>Props</h2>
+  <table>
+    <thead><tr><th>Prop</th><th>Default</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><code>name</code></td><td></td><td>The icon, e.g. <code>"caret-down"</code>.</td></tr>
+      <tr><td><code>size</code></td><td><code>24</code></td><td>Width and height.</td></tr>
+      <tr><td><code>variant</code></td><td><code>"line"</code></td><td><code>"line"</code> or <code>"fill"</code>.</td></tr>
+      <tr><td><code>strokeWidth</code></td><td><code>1.8</code></td><td>Line weight on the 24 grid.</td></tr>
+      <tr><td><code>label</code></td><td></td><td>Accessible name (<code>role="img"</code> and <code>aria-label</code>). Without it the icon is <code>aria-hidden</code>.</td></tr>
+      <tr><td><code>class</code>, SVG attributes</td><td></td><td>Passed to the <code>&lt;svg&gt;</code>.</td></tr>
+    </tbody>
+  </table>
+  <h2>In a sidebar</h2>
+  <Snippet lang="astro" code={`
+---
+import Icon from 'plume-icons/astro';
+const here = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Home', icon: 'home' },
+  { href: '/settings', label: 'Settings', icon: 'gear' },
+] as const;
+---
+<nav>
+  {links.map((l) => (
+    <a href={l.href} aria-current={here === l.href ? 'page' : undefined}>
+      <Icon name={l.icon} variant={here === l.href ? 'fill' : 'line'} size={18} />
+      {l.label}
+    </a>
+  ))}
+</nav>`} />
+  <p>Already on astro-icon? See <a href={`${base}/docs/iconify/`}>Iconify and astro-icon</a>.</p>
+</Docs>

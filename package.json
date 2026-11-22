@@ -1,0 +1,88 @@
+{
+  "name": "plume-icons",
+  "version": "0.1.0",
+  "description": "Soft, rounded line and fill icons for plain SVG, React (Next.js), Astro and Iconify.",
+  "type": "module",
+  "license": "MIT",
+  "author": "yash-ceo-ai",
+  "homepage": "https://yash-ceo-ai.github.io/plume-icons/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yash-ceo-ai/plume-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yash-ceo-ai/plume-icons/issues"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "icon-set",
+    "react",
+    "nextjs",
+    "astro",
+    "astro-component",
+    "withastro",
+    "iconify"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./astro": "./dist/astro/Icon.astro",
+    "./plume.json": "./dist/plume.json",
+    "./icons.json": "./dist/plume.json",
+    "./meta.json": "./dist/meta.json",
+    "./svg/*": "./dist/svg/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "new": "node scripts/new-icon.mjs",
+    "sheet": "node scripts/sheet.mjs",
+    "pretest": "npm run check && npm run build",
+    "test": "node --test 'test/*.test.mjs'",
+    "test:types": "tsc -p test/types",
+    "test:pack": "node scripts/smoke-pack.mjs",
+    "test:examples": "node scripts/test-examples.mjs",
+    "prepublishOnly": "npm test && npm run test:types",
+    "readme": "node scripts/readme.mjs"
+  },
+  "peerDependencies": {
+    "astro": ">=4",
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "astro": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@iconify/types": "^2.0.0",
+    "@iconify/utils": "^3.1.7",
+    "@playwright/test": "^1.65.1",
+    "@types/react": "^19.3.0",
+    "astro": "^7.4.13",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "svgo": "^4.1.0",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

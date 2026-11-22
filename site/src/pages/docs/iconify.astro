@@ -1,0 +1,30 @@
+---
+import Docs from '../../layouts/Docs.astro';
+import Snippet from '../../components/Snippet.astro';
+---
+
+<Docs title="Iconify and astro-icon">
+  <p>The package includes an Iconify collection at <code>plume-icons/plume.json</code>. Its prefix is <code>plume</code> and every icon has two names: <code>&lt;name&gt;-line</code> and <code>&lt;name&gt;-fill</code>.</p>
+  <h2>astro-icon</h2>
+  <p>astro-icon loads Iconify sets from packages named <code>@iconify-json/&lt;prefix&gt;</code>. Install Plume under that name with an npm alias:</p>
+  <Snippet lang="sh" code="npm install @iconify-json/plume@npm:plume-icons" />
+  <Snippet lang="js" code={`
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import icon from 'astro-icon';
+
+export default defineConfig({
+  integrations: [icon({ include: { plume: ['search-line', 'search-fill', 'gear-line'] } })],
+});`} />
+  <Snippet lang="astro" code={`
+---
+import { Icon } from 'astro-icon/components';
+---
+<Icon name="plume:search-line" size={18} />`} />
+  <p>astro-icon renders repeated icons as a sprite and makes mask ids unique for you.</p>
+  <h2>unplugin-icons and other Iconify tools</h2>
+  <p>The same alias works for anything that reads <code>@iconify-json/*</code> packages, such as unplugin-icons (<code>~icons/plume/search-line</code>) and the Iconify Tailwind plugin. For tools that take a JSON file, point them at <code>node_modules/plume-icons/dist/plume.json</code>.</p>
+  <h2>Stroke width</h2>
+  <p>Iconify bodies carry the 1.8 line on a group inside the SVG. To change it, set CSS <code>stroke-width</code> on that group; the cuts in fill icons follow it.</p>
+  <Snippet lang="css" code={`.small-icon > g { stroke-width: 1.6; }`} />
+</Docs>

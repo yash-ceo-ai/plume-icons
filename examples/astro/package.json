@@ -1,0 +1,19 @@
+{
+  "name": "plume-example-astro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build"
+  },
+  "dependencies": {
+    "@iconify-json/plume": "file:../..",
+    "astro": "^7.4.13",
+    "astro-icon": "^1.2.0",
+    "plume-icons": "file:../.."
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^6.0.3"
+  }
+}

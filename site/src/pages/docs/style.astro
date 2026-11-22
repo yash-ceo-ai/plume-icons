@@ -1,0 +1,49 @@
+---
+import Docs from '../../layouts/Docs.astro';
+import Icon from 'plume-icons/astro';
+---
+
+<Docs title="Style guide" description="How Plume icons are drawn: grid, line, corners, fill cut-outs.">
+  <p>These rules keep the set consistent. <code>npm run check</code> enforces the ones a script can check; reviewers check the rest by eye.</p>
+  <div class="demo">
+    <figure><Icon name="dashboard" size={72} /><figcaption>Rounded-square frame, radius 5.25</figcaption></figure>
+    <figure><Icon name="chats" size={72} /><figcaption>Overlapping shapes for character</figcaption></figure>
+    <figure><Icon name="radar" size={72} /><figcaption>Dots, not detail</figcaption></figure>
+    <figure><Icon name="list-checks" size={72} variant="fill" /><figcaption>Fill: solid shape, masked cut-outs</figcaption></figure>
+  </div>
+  <h2>Grid</h2>
+  <ul>
+    <li><code>viewBox="0 0 24 24"</code> with 2px of padding: the drawing, line included, sits inside the middle 20 × 20.</li>
+    <li>Frames (squares, bubbles, screens) are 16.5 wide and start at 3.75, so their outside edge lands on the padding.</li>
+    <li>Open shapes (arrows, carets, plus) are smaller: about 14 wide, centred.</li>
+  </ul>
+  <h2>Line</h2>
+  <ul>
+    <li>1.8 on the 24 grid, round caps and round joins, set once on the <code>&lt;svg&gt;</code>. Shapes never set their own <code>stroke-width</code>, so <code>strokeWidth</code> changes the whole icon.</li>
+    <li>Corners are soft: frames use radius 5.25, smaller boxes 4, tiles 2.25.</li>
+    <li>At most three strokes inside a frame. If an icon does not read at 16px, take something away.</li>
+    <li>Dots are filled circles of radius 1.05 to 1.5 with no stroke.</li>
+  </ul>
+  <h2>Fill</h2>
+  <ul>
+    <li>The main shape is solid and keeps the same outline as the line version.</li>
+    <li>Details are cut out with a <code>&lt;mask maskUnits="userSpaceOnUse"&gt;</code>: white keeps, black cuts. The holes are real, so the icon works on any background.</li>
+    <li>Secondary parts (a handle, the second bubble, antennas) stay as lines.</li>
+    <li>Icons without a closed shape (arrows, carets, x) use the same drawing for both versions.</li>
+  </ul>
+  <h2>Colour</h2>
+  <ul>
+    <li>Only <code>currentColor</code> and <code>none</code> (and <code>#fff</code> / <code>#000</code> inside a mask). No opacity, gradients, styles, scripts, images or text.</li>
+  </ul>
+  <h2>Names</h2>
+  <ul>
+    <li>Plain, lowercase, kebab-case, named for what the icon shows: <code>caret-down</code>, <code>user-plus</code>, <code>bell-ring</code>.</li>
+    <li>Tags hold the other words people search for (<code>gear</code> is tagged settings, cog, preferences).</li>
+  </ul>
+  <style>
+    .demo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+    figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 20px 12px 14px; border: 1px solid var(--line-soft); border-radius: 10px; background: var(--panel); }
+    figcaption { color: var(--muted); font-size: 12px; text-align: center; line-height: 16px; }
+    @media (max-width: 640px) { .demo { grid-template-columns: 1fr 1fr; } }
+  </style>
+</Docs>

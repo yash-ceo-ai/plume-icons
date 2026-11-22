@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import Icon from 'plume-icons/astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Soft, rounded line and fill icons for SVG, React, Next.js, Astro and Iconify. MIT.' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const path = Astro.url.pathname.replace(base, '') || '/';
+const nav = [
+  { href: '/', label: 'Icons', on: path === '/' || path === '' },
+  { href: '/docs/', label: 'Docs', on: path.startsWith('/docs') },
+];
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem('plume-theme');
+        const t = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="top">
+      <a class="mark" href={`${base}/`}><Icon name="brand" variant="fill" size={22} /> Plume Icons</a>
+      <nav aria-label="Main">
+        {nav.map((n) => <a href={`${base}${n.href}`} aria-current={n.on ? 'page' : undefined}>{n.label}</a>)}
+      </nav>
+      <span class="grow"></span>
+      <a class="btn-icon btn" href="https://github.com/yash-ceo-ai/plume-icons" aria-label="GitHub repository"><Icon name="external-link" size={18} /></a>
+      <button class="btn-icon btn" type="button" data-theme-toggle aria-label="Switch theme">
+        <Icon name="moon" size={18} class="t-dark" />
+        <Icon name="sun" size={18} class="t-light" />
+      </button>
+    </header>
+    <slot />
+    <footer class="foot">
+      Plume Icons, MIT. Made by <a href="https://github.com/yash-ceo-ai">yash-ceo-ai</a>.
+    </footer>
+    <script>
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+        const h = document.documentElement;
+        const t = h.dataset.theme === 'dark' ? 'light' : 'dark';
+        h.dataset.theme = t;
+        localStorage.setItem('plume-theme', t);
+      });
+    </script>
+    <style>
+      .top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 24px; height: 56px; padding: 0 24px; background: var(--bg); border-bottom: 1px solid var(--line-soft); }
+      .mark { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; text-decoration: none; }
+      nav { display: flex; gap: 4px; }
+      nav a { padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; }
+      nav a:hover, nav a[aria-current] { color: var(--text); background: var(--raised); }
+      .grow { flex: 1; }
+      [data-theme='dark'] .t-light, [data-theme='light'] .t-dark { display: none; }
+      .foot { padding: 32px 24px 48px; color: var(--muted); font-size: 12px; text-align: center; }
+      @media (max-width: 600px) { .top { gap: 12px; padding: 0 12px; } }
+    </style>
+  </body>
+</html>

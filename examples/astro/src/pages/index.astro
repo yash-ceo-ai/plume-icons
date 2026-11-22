@@ -1,0 +1,30 @@
+---
+// Plume Icons in Astro: the component (plume-icons/astro) and the Iconify route (astro-icon).
+import Icon from 'plume-icons/astro';
+import { Icon as AstroIcon } from 'astro-icon/components';
+import { iconNames } from 'plume-icons';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Plume Icons in Astro</title>
+    <style>
+      body { font: 14px system-ui; background: #121110; color: #ecebe9; margin: 24px; }
+      .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
+      .grid div { display: flex; gap: 8px; align-items: center; }
+    </style>
+  </head>
+  <body>
+    <h1>Plume Icons in Astro</h1>
+    <section id="component">
+      <h2>plume-icons/astro</h2>
+      <p><Icon name="search" size={18} label="Search" /> <Icon name="dashboard" variant="fill" /> <Icon name="dashboard" variant="fill" /> <Icon name="gear" strokeWidth={1.4} class="thin" /></p>
+      <div class="grid">{iconNames.map((name) => <div title={name}><Icon name={name} /><Icon name={name} variant="fill" /></div>)}</div>
+    </section>
+    <section id="iconify">
+      <h2>astro-icon (Iconify)</h2>
+      <AstroIcon name="plume:search-line" size={24} /> <AstroIcon name="plume:gear-fill" size={24} />
+    </section>
+  </body>
+</html>
