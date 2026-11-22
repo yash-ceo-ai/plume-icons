@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.4.0 (2026-11-22)
 
 - First icons: the 16 approved set-B icons (dashboard, chats, brand, search, radar, list-checks, bot, gear, bell,
   plus, help, sidebar, caret-up-down, globe, link, calendar) and batch 1, shell and navigation (31 icons).

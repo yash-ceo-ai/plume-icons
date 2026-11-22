@@ -1,4 +1,4 @@
-name: Release to npm
+name: Release
 on:
   push:
     tags: ['v*']
@@ -20,10 +20,16 @@ jobs:
       - run: npm test
       - run: npm run test:types
       - run: npm run test:pack
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: GitHub release
-        run: gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --notes "See CHANGELOG.md" --verify-tag
+      - name: Pack
+        run: npm pack
+      # The built package is attached to the GitHub release, so it can be installed without npm:
+      # npm install https://github.com/yash-ceo-ai/plume-icons/releases/download/vX.Y.Z/plume-icons-X.Y.Z.tgz
+      - name: GitHub release with the package attached
+        run: gh release create "$GITHUB_REF_NAME" plume-icons-*.tgz --title "$GITHUB_REF_NAME" --notes "See CHANGELOG.md. Install: npm install https://github.com/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME/plume-icons-${GITHUB_REF_NAME#v}.tgz" --verify-tag
         env:
           GH_TOKEN: ${{ github.token }}
+      - name: Publish to npm (when the NPM_TOKEN secret is set)
+        if: env.NODE_AUTH_TOKEN != ''
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

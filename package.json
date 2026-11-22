@@ -1,6 +1,6 @@
 {
   "name": "plume-icons",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "description": "Soft, rounded line and fill icons for plain SVG, React (Next.js), Astro and Iconify.",
   "type": "module",
   "license": "MIT",
