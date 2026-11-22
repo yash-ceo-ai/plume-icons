@@ -1,7 +1,7 @@
 # Plume Icons
 
 Soft, rounded icons with a line and a fill version of each, for plain SVG, React (Next.js), Astro and Iconify.
-<!-- count:start -->105<!-- count:end --> icons so far, MIT licensed.
+<!-- count:start -->134<!-- count:end --> icons so far, MIT licensed.
 
 **Browse and copy icons:** https://yash-ceo-ai.github.io/plume-icons/
 
@@ -115,15 +115,19 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 | Plume | Phosphor | Lucide |
 |---|---|---|
 | `alert-circle` | `warning-circle` | `circle-alert` |
+| `arrow-bend-down` | `arrow-bend-left-down` | `corner-left-down` |
 | `arrow-down` | `arrow-down` | `arrow-down` |
 | `arrow-left` | `arrow-left` | `arrow-left` |
 | `arrow-right` | `arrow-right` | `arrow-right` |
 | `arrow-up` | `arrow-up` | `arrow-up` |
 | `arrow-up-right` | `arrow-up-right` | `arrow-up-right` |
 | `arrows-left-right` | `arrows-left-right` | `arrow-left-right` |
+| `at` | `at` | `at-sign` |
 | `badge-check` | `seal-check` | `badge-check` |
 | `bell` | `bell` | `bell` |
 | `bell-ring` | `bell-ringing` | `bell-ring` |
+| `book-open` | `book-open` | `book-open` |
+| `books` | `books` | `library` |
 | `bot` | `robot` | `bot` |
 | `brand` | `buildings`, `diamond` | `building-2`, `gem` |
 | `calendar` | `calendar-blank`, `calendar` | `calendar` |
@@ -136,12 +140,17 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 | `chart-bar` | `chart-bar`, `chart-bar-horizontal` | `chart-column`, `chart-no-axes-column` |
 | `chart-line` | `chart-line`, `chart-line-up` | `chart-line`, `chart-spline` |
 | `chart-pie` | `chart-pie-slice`, `chart-pie` | `chart-pie` |
+| `chat` | `chat-centered`, `chat` | `message-square` |
+| `chat-circle` | `chat-circle` | `message-circle` |
 | `chats` | `chats`, `chat-circle-text`, `chat-centered-text` | `messages-square` |
 | `check` | `check` | `check` |
 | `check-circle` | `check-circle` | `circle-check`, `circle-check-big` |
 | `circle-dashed` | `circle-dashed` | `circle-dashed` |
 | `clock` | `clock` | `clock` |
+| `code` | `code`, `code-simple` | `code`, `code-xml` |
 | `coins` | `coins` | `coins` |
+| `command` | `command` | `command` |
+| `compass` | `compass` | `compass` |
 | `copy` | `copy` | `copy` |
 | `crown` | `crown`, `crown-simple` | `crown` |
 | `cursor` | `cursor`, `navigation-arrow` | `mouse-pointer-2`, `mouse-pointer` |
@@ -153,10 +162,14 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 | `expand` | `arrows-out` | `expand`, `maximize-2` |
 | `external-link` | `arrow-square-out` | `external-link`, `square-arrow-out-up-right` |
 | `eye` | `eye` | `eye` |
+| `file-search` | `file-magnifying-glass`, `file-search` | `file-search` |
+| `file-sheet` | `file-xls`, `file-csv` | `file-spreadsheet` |
+| `file-text` | `file-text`, `file` | `file-text`, `file` |
 | `filter` | `funnel-simple`, `funnel` | `list-filter`, `filter` |
 | `fingerprint` | `fingerprint` | `fingerprint` |
 | `flag` | `flag` | `flag` |
 | `gear` | `gear`, `gear-six` | `settings`, `cog` |
+| `git-fork` | `git-fork` | `git-fork` |
 | `globe` | `globe`, `globe-simple` | `globe`, `earth` |
 | `grid` | `squares-four` | `layout-grid` |
 | `help` | `question` | `circle-help`, `badge-help` |
@@ -165,6 +178,7 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 | `inbox` | `tray` | `inbox` |
 | `info` | `info` | `info`, `badge-info` |
 | `key` | `key` | `key-round`, `key` |
+| `laptop` | `laptop` | `laptop` |
 | `lightbulb` | `lightbulb` | `lightbulb` |
 | `lightning` | `lightning` | `zap` |
 | `link` | `link`, `link-simple` | `link`, `link-2` |
@@ -173,10 +187,14 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 | `lock` | `lock`, `lock-simple` | `lock` |
 | `magic-wand` | `magic-wand` | `wand-sparkles`, `wand` |
 | `mail` | `envelope-simple`, `envelope` | `mail` |
+| `megaphone` | `megaphone`, `megaphone-simple` | `megaphone` |
 | `menu` | `list` | `menu` |
+| `microphone` | `microphone` | `mic` |
 | `minus` | `minus` | `minus` |
 | `minus-circle` | `minus-circle` | `circle-minus` |
+| `monitor` | `monitor`, `desktop` | `monitor` |
 | `moon` | `moon` | `moon` |
+| `palette` | `palette` | `palette` |
 | `panel-right` | `sidebar` | `panel-right` |
 | `paperclip` | `paperclip` | `paperclip` |
 | `pause` | `pause` | `pause` |
@@ -184,12 +202,17 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 | `percent` | `percent` | `percent` |
 | `pin` | `push-pin` | `pin` |
 | `play` | `play` | `play` |
+| `plug` | `plug` | `plug` |
+| `plugs-connected` | `plugs-connected` | `plug-zap`, `unplug` |
 | `plus` | `plus` | `plus` |
+| `puzzle` | `puzzle-piece` | `puzzle` |
+| `quotes` | `quotes` | `quote`, `message-square-quote` |
 | `radar` | `pulse`, `circle-notch` | `radar`, `loader` |
 | `refresh` | `arrow-clockwise`, `arrows-clockwise` | `rotate-cw`, `refresh-cw` |
 | `scan` | `scan` | `scan`, `scan-line` |
 | `search` | `magnifying-glass` | `search` |
 | `send` | `paper-plane-tilt`, `paper-plane-right` | `send` |
+| `server` | `hard-drives`, `database` | `server`, `hard-drive` |
 | `share` | `share-network` | `share-2` |
 | `shield` | `shield` | `shield` |
 | `shield-check` | `shield-check` | `shield-check` |
@@ -205,19 +228,25 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 | `spinner` | `spinner`, `circle-notch`, `spinner-gap` | `loader-circle` |
 | `stop` | `stop` | `square` |
 | `sun` | `sun` | `sun` |
+| `swatches` | `swatches` | `swatch-book` |
+| `sword` | `sword` | `sword`, `swords` |
 | `table` | `table` | `table`, `table-2` |
 | `tag` | `tag`, `tag-simple` | `tag` |
 | `target` | `target` | `target` |
+| `terminal` | `terminal-window`, `terminal` | `square-terminal`, `terminal` |
+| `text-size` | `text-aa` | `a-large-small`, `case-sensitive` |
 | `thumbs-up` | `thumbs-up` | `thumbs-up` |
 | `trash` | `trash`, `trash-simple` | `trash-2`, `trash` |
 | `trend-down` | `trend-down` | `trending-down` |
 | `trend-up` | `trend-up` | `trending-up` |
+| `type` | `text-t` | `type` |
 | `undo` | `arrow-u-up-left`, `arrow-counter-clockwise` | `undo-2` |
 | `upload` | `upload-simple`, `upload` | `upload` |
 | `user` | `user` | `user` |
 | `user-plus` | `user-plus` | `user-plus` |
 | `users` | `users` | `users` |
 | `warning` | `warning` | `triangle-alert` |
+| `wrench` | `wrench` | `wrench` |
 | `x` | `x` | `x` |
 <!-- map:end -->
 

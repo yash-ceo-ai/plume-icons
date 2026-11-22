@@ -94,9 +94,9 @@ test('toSvg() makes unique mask ids, applies options and escapes', () => {
   assert.throws(() => toSvg('nope'), /unknown icon "nope"/);
 });
 
-test('app coverage: every icon the Renown app uses has a Plume icon', (t) => {
+test('app coverage: every icon the Renown app uses has a Plume icon', () => {
   const { icons: cover } = JSON.parse(readFileSync(new URL('../app-coverage.json', import.meta.url), 'utf8'));
   for (const [ph, plume] of Object.entries(cover)) if (plume) assert.ok(icons[plume], `${ph} -> ${plume} does not exist`);
   const missing = Object.entries(cover).filter(([, p]) => !p).map(([ph]) => ph);
-  if (missing.length) t.todo(`${missing.length} of ${Object.keys(cover).length} app icons not drawn yet`);
+  assert.deepEqual(missing, [], `app icons with no Plume icon: ${missing.join(', ')}`);
 });

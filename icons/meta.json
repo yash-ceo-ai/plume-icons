@@ -14,6 +14,21 @@
       "circle-alert"
     ]
   },
+  "arrow-bend-down": {
+    "category": "navigation",
+    "tags": [
+      "turn",
+      "bend",
+      "reply",
+      "down"
+    ],
+    "phosphor": [
+      "arrow-bend-left-down"
+    ],
+    "lucide": [
+      "corner-left-down"
+    ]
+  },
   "arrow-down": {
     "category": "navigation",
     "tags": [
@@ -99,6 +114,21 @@
       "arrow-left-right"
     ]
   },
+  "at": {
+    "category": "communication",
+    "tags": [
+      "mention",
+      "email",
+      "address",
+      "handle"
+    ],
+    "phosphor": [
+      "at"
+    ],
+    "lucide": [
+      "at-sign"
+    ]
+  },
   "badge-check": {
     "category": "status",
     "tags": [
@@ -141,6 +171,36 @@
     ],
     "lucide": [
       "bell-ring"
+    ]
+  },
+  "book-open": {
+    "category": "content",
+    "tags": [
+      "read",
+      "guide",
+      "manual",
+      "docs"
+    ],
+    "phosphor": [
+      "book-open"
+    ],
+    "lucide": [
+      "book-open"
+    ]
+  },
+  "books": {
+    "category": "content",
+    "tags": [
+      "library",
+      "knowledge",
+      "docs",
+      "shelf"
+    ],
+    "phosphor": [
+      "books"
+    ],
+    "lucide": [
+      "library"
     ]
   },
   "bot": {
@@ -328,6 +388,37 @@
       "chart-pie"
     ]
   },
+  "chat": {
+    "category": "communication",
+    "tags": [
+      "message",
+      "comment",
+      "bubble",
+      "reply"
+    ],
+    "phosphor": [
+      "chat-centered",
+      "chat"
+    ],
+    "lucide": [
+      "message-square"
+    ]
+  },
+  "chat-circle": {
+    "category": "communication",
+    "tags": [
+      "message",
+      "comment",
+      "bubble",
+      "talk"
+    ],
+    "phosphor": [
+      "chat-circle"
+    ],
+    "lucide": [
+      "message-circle"
+    ]
+  },
   "chats": {
     "category": "communication",
     "tags": [
@@ -406,6 +497,23 @@
       "clock"
     ]
   },
+  "code": {
+    "category": "development",
+    "tags": [
+      "brackets",
+      "html",
+      "developer",
+      "embed"
+    ],
+    "phosphor": [
+      "code",
+      "code-simple"
+    ],
+    "lucide": [
+      "code",
+      "code-xml"
+    ]
+  },
   "coins": {
     "category": "commerce",
     "tags": [
@@ -420,6 +528,36 @@
     ],
     "lucide": [
       "coins"
+    ]
+  },
+  "command": {
+    "category": "development",
+    "tags": [
+      "cmd",
+      "keyboard",
+      "shortcut",
+      "mac"
+    ],
+    "phosphor": [
+      "command"
+    ],
+    "lucide": [
+      "command"
+    ]
+  },
+  "compass": {
+    "category": "navigation",
+    "tags": [
+      "explore",
+      "discover",
+      "direction",
+      "browse"
+    ],
+    "phosphor": [
+      "compass"
+    ],
+    "lucide": [
+      "compass"
     ]
   },
   "copy": {
@@ -595,6 +733,56 @@
       "eye"
     ]
   },
+  "file-search": {
+    "category": "files",
+    "tags": [
+      "find",
+      "audit",
+      "inspect",
+      "lookup"
+    ],
+    "phosphor": [
+      "file-magnifying-glass",
+      "file-search"
+    ],
+    "lucide": [
+      "file-search"
+    ]
+  },
+  "file-sheet": {
+    "category": "files",
+    "tags": [
+      "spreadsheet",
+      "csv",
+      "excel",
+      "xls",
+      "table"
+    ],
+    "phosphor": [
+      "file-xls",
+      "file-csv"
+    ],
+    "lucide": [
+      "file-spreadsheet"
+    ]
+  },
+  "file-text": {
+    "category": "files",
+    "tags": [
+      "document",
+      "page",
+      "doc",
+      "report"
+    ],
+    "phosphor": [
+      "file-text",
+      "file"
+    ],
+    "lucide": [
+      "file-text",
+      "file"
+    ]
+  },
   "filter": {
     "category": "actions",
     "tags": [
@@ -656,6 +844,21 @@
     "lucide": [
       "settings",
       "cog"
+    ]
+  },
+  "git-fork": {
+    "category": "development",
+    "tags": [
+      "branch",
+      "fork",
+      "split",
+      "version"
+    ],
+    "phosphor": [
+      "git-fork"
+    ],
+    "lucide": [
+      "git-fork"
     ]
   },
   "globe": {
@@ -781,6 +984,20 @@
     "lucide": [
       "key-round",
       "key"
+    ]
+  },
+  "laptop": {
+    "category": "devices",
+    "tags": [
+      "computer",
+      "notebook",
+      "device"
+    ],
+    "phosphor": [
+      "laptop"
+    ],
+    "lucide": [
+      "laptop"
     ]
   },
   "lightbulb": {
@@ -910,6 +1127,22 @@
       "mail"
     ]
   },
+  "megaphone": {
+    "category": "communication",
+    "tags": [
+      "announce",
+      "marketing",
+      "broadcast",
+      "campaign"
+    ],
+    "phosphor": [
+      "megaphone",
+      "megaphone-simple"
+    ],
+    "lucide": [
+      "megaphone"
+    ]
+  },
   "menu": {
     "category": "navigation",
     "tags": [
@@ -922,6 +1155,22 @@
     ],
     "lucide": [
       "menu"
+    ]
+  },
+  "microphone": {
+    "category": "media",
+    "tags": [
+      "mic",
+      "voice",
+      "record",
+      "audio",
+      "tone of voice"
+    ],
+    "phosphor": [
+      "microphone"
+    ],
+    "lucide": [
+      "mic"
     ]
   },
   "minus": {
@@ -952,6 +1201,21 @@
       "circle-minus"
     ]
   },
+  "monitor": {
+    "category": "devices",
+    "tags": [
+      "screen",
+      "desktop",
+      "display"
+    ],
+    "phosphor": [
+      "monitor",
+      "desktop"
+    ],
+    "lucide": [
+      "monitor"
+    ]
+  },
   "moon": {
     "category": "status",
     "tags": [
@@ -965,6 +1229,22 @@
     ],
     "lucide": [
       "moon"
+    ]
+  },
+  "palette": {
+    "category": "content",
+    "tags": [
+      "colour",
+      "color",
+      "paint",
+      "theme",
+      "design"
+    ],
+    "phosphor": [
+      "palette"
+    ],
+    "lucide": [
+      "palette"
     ]
   },
   "panel-right": {
@@ -1070,6 +1350,37 @@
       "play"
     ]
   },
+  "plug": {
+    "category": "development",
+    "tags": [
+      "integration",
+      "connect",
+      "power",
+      "plugin"
+    ],
+    "phosphor": [
+      "plug"
+    ],
+    "lucide": [
+      "plug"
+    ]
+  },
+  "plugs-connected": {
+    "category": "development",
+    "tags": [
+      "connected",
+      "integration",
+      "linked",
+      "sync"
+    ],
+    "phosphor": [
+      "plugs-connected"
+    ],
+    "lucide": [
+      "plug-zap",
+      "unplug"
+    ]
+  },
   "plus": {
     "category": "actions",
     "tags": [
@@ -1082,6 +1393,37 @@
     ],
     "lucide": [
       "plus"
+    ]
+  },
+  "puzzle": {
+    "category": "development",
+    "tags": [
+      "plugin",
+      "extension",
+      "addon",
+      "puzzle piece"
+    ],
+    "phosphor": [
+      "puzzle-piece"
+    ],
+    "lucide": [
+      "puzzle"
+    ]
+  },
+  "quotes": {
+    "category": "content",
+    "tags": [
+      "quote",
+      "citation",
+      "testimonial",
+      "blockquote"
+    ],
+    "phosphor": [
+      "quotes"
+    ],
+    "lucide": [
+      "quote",
+      "message-square-quote"
     ]
   },
   "radar": {
@@ -1164,6 +1506,23 @@
     ],
     "lucide": [
       "send"
+    ]
+  },
+  "server": {
+    "category": "development",
+    "tags": [
+      "database",
+      "storage",
+      "hosting",
+      "drives"
+    ],
+    "phosphor": [
+      "hard-drives",
+      "database"
+    ],
+    "lucide": [
+      "server",
+      "hard-drive"
     ]
   },
   "share": {
@@ -1394,6 +1753,37 @@
       "sun"
     ]
   },
+  "swatches": {
+    "category": "content",
+    "tags": [
+      "colours",
+      "brand kit",
+      "samples",
+      "design"
+    ],
+    "phosphor": [
+      "swatches"
+    ],
+    "lucide": [
+      "swatch-book"
+    ]
+  },
+  "sword": {
+    "category": "misc",
+    "tags": [
+      "competitor",
+      "battle",
+      "compete",
+      "versus"
+    ],
+    "phosphor": [
+      "sword"
+    ],
+    "lucide": [
+      "sword",
+      "swords"
+    ]
+  },
   "table": {
     "category": "content",
     "tags": [
@@ -1438,6 +1828,39 @@
     ],
     "lucide": [
       "target"
+    ]
+  },
+  "terminal": {
+    "category": "development",
+    "tags": [
+      "console",
+      "shell",
+      "cli",
+      "command line"
+    ],
+    "phosphor": [
+      "terminal-window",
+      "terminal"
+    ],
+    "lucide": [
+      "square-terminal",
+      "terminal"
+    ]
+  },
+  "text-size": {
+    "category": "content",
+    "tags": [
+      "font",
+      "typography",
+      "text",
+      "letters"
+    ],
+    "phosphor": [
+      "text-aa"
+    ],
+    "lucide": [
+      "a-large-small",
+      "case-sensitive"
     ]
   },
   "thumbs-up": {
@@ -1500,6 +1923,21 @@
     ],
     "lucide": [
       "trending-up"
+    ]
+  },
+  "type": {
+    "category": "content",
+    "tags": [
+      "text",
+      "font",
+      "typography",
+      "heading"
+    ],
+    "phosphor": [
+      "text-t"
+    ],
+    "lucide": [
+      "type"
     ]
   },
   "undo": {
@@ -1590,6 +2028,21 @@
     ],
     "lucide": [
       "triangle-alert"
+    ]
+  },
+  "wrench": {
+    "category": "actions",
+    "tags": [
+      "tool",
+      "fix",
+      "repair",
+      "maintenance"
+    ],
+    "phosphor": [
+      "wrench"
+    ],
+    "lucide": [
+      "wrench"
     ]
   },
   "x": {
