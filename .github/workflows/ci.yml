@@ -16,8 +16,8 @@ jobs:
       - run: npm test
       - run: npm run test:types
       - run: npm run test:pack
-      - name: README is up to date
-        run: npm run readme && git diff --exit-code README.md
+      - name: README and app coverage are up to date
+        run: npm run readme && npm run coverage && git diff --exit-code README.md app-coverage.json
 
   examples:
     name: Next.js and Astro examples

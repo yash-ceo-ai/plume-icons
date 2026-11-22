@@ -1,4 +1,19 @@
 {
+  "alert-circle": {
+    "category": "status",
+    "tags": [
+      "warning",
+      "error",
+      "attention",
+      "exclamation"
+    ],
+    "phosphor": [
+      "warning-circle"
+    ],
+    "lucide": [
+      "circle-alert"
+    ]
+  },
   "arrow-down": {
     "category": "navigation",
     "tags": [
@@ -67,6 +82,36 @@
     ],
     "lucide": [
       "arrow-up-right"
+    ]
+  },
+  "arrows-left-right": {
+    "category": "navigation",
+    "tags": [
+      "swap",
+      "switch",
+      "transfer",
+      "exchange"
+    ],
+    "phosphor": [
+      "arrows-left-right"
+    ],
+    "lucide": [
+      "arrow-left-right"
+    ]
+  },
+  "badge-check": {
+    "category": "status",
+    "tags": [
+      "verified",
+      "seal",
+      "approved",
+      "certified"
+    ],
+    "phosphor": [
+      "seal-check"
+    ],
+    "lucide": [
+      "badge-check"
     ]
   },
   "bell": {
@@ -147,6 +192,22 @@
       "calendar"
     ]
   },
+  "calendar-clock": {
+    "category": "time",
+    "tags": [
+      "schedule",
+      "deadline",
+      "event",
+      "due"
+    ],
+    "phosphor": [
+      "calendar-dots",
+      "calendar-clock"
+    ],
+    "lucide": [
+      "calendar-clock"
+    ]
+  },
   "caret-down": {
     "category": "navigation",
     "tags": [
@@ -217,6 +278,56 @@
       "chevrons-up-down"
     ]
   },
+  "chart-bar": {
+    "category": "charts",
+    "tags": [
+      "bars",
+      "analytics",
+      "stats",
+      "column"
+    ],
+    "phosphor": [
+      "chart-bar",
+      "chart-bar-horizontal"
+    ],
+    "lucide": [
+      "chart-column",
+      "chart-no-axes-column"
+    ]
+  },
+  "chart-line": {
+    "category": "charts",
+    "tags": [
+      "graph",
+      "analytics",
+      "stats",
+      "line chart"
+    ],
+    "phosphor": [
+      "chart-line",
+      "chart-line-up"
+    ],
+    "lucide": [
+      "chart-line",
+      "chart-spline"
+    ]
+  },
+  "chart-pie": {
+    "category": "charts",
+    "tags": [
+      "pie",
+      "share",
+      "breakdown",
+      "donut"
+    ],
+    "phosphor": [
+      "chart-pie-slice",
+      "chart-pie"
+    ],
+    "lucide": [
+      "chart-pie"
+    ]
+  },
   "chats": {
     "category": "communication",
     "tags": [
@@ -247,6 +358,116 @@
     ],
     "lucide": [
       "check"
+    ]
+  },
+  "check-circle": {
+    "category": "status",
+    "tags": [
+      "done",
+      "success",
+      "complete",
+      "ok"
+    ],
+    "phosphor": [
+      "check-circle"
+    ],
+    "lucide": [
+      "circle-check",
+      "circle-check-big"
+    ]
+  },
+  "circle-dashed": {
+    "category": "status",
+    "tags": [
+      "pending",
+      "draft",
+      "todo",
+      "empty"
+    ],
+    "phosphor": [
+      "circle-dashed"
+    ],
+    "lucide": [
+      "circle-dashed"
+    ]
+  },
+  "clock": {
+    "category": "time",
+    "tags": [
+      "time",
+      "hour",
+      "watch",
+      "pending"
+    ],
+    "phosphor": [
+      "clock"
+    ],
+    "lucide": [
+      "clock"
+    ]
+  },
+  "coins": {
+    "category": "commerce",
+    "tags": [
+      "money",
+      "credits",
+      "cost",
+      "currency",
+      "balance"
+    ],
+    "phosphor": [
+      "coins"
+    ],
+    "lucide": [
+      "coins"
+    ]
+  },
+  "copy": {
+    "category": "actions",
+    "tags": [
+      "duplicate",
+      "clipboard",
+      "clone"
+    ],
+    "phosphor": [
+      "copy"
+    ],
+    "lucide": [
+      "copy"
+    ]
+  },
+  "crown": {
+    "category": "commerce",
+    "tags": [
+      "premium",
+      "owner",
+      "pro",
+      "king",
+      "vip"
+    ],
+    "phosphor": [
+      "crown",
+      "crown-simple"
+    ],
+    "lucide": [
+      "crown"
+    ]
+  },
+  "cursor": {
+    "category": "actions",
+    "tags": [
+      "pointer",
+      "mouse",
+      "click",
+      "select"
+    ],
+    "phosphor": [
+      "cursor",
+      "navigation-arrow"
+    ],
+    "lucide": [
+      "mouse-pointer-2",
+      "mouse-pointer"
     ]
   },
   "dashboard": {
@@ -295,6 +516,38 @@
       "ellipsis-vertical"
     ]
   },
+  "download": {
+    "category": "actions",
+    "tags": [
+      "save",
+      "export",
+      "get"
+    ],
+    "phosphor": [
+      "download-simple",
+      "download"
+    ],
+    "lucide": [
+      "download"
+    ]
+  },
+  "edit": {
+    "category": "actions",
+    "tags": [
+      "note",
+      "compose",
+      "write",
+      "draft"
+    ],
+    "phosphor": [
+      "note-pencil",
+      "pencil-simple-line"
+    ],
+    "lucide": [
+      "square-pen",
+      "file-pen-line"
+    ]
+  },
   "expand": {
     "category": "navigation",
     "tags": [
@@ -324,6 +577,68 @@
     "lucide": [
       "external-link",
       "square-arrow-out-up-right"
+    ]
+  },
+  "eye": {
+    "category": "actions",
+    "tags": [
+      "view",
+      "show",
+      "visible",
+      "preview",
+      "watch"
+    ],
+    "phosphor": [
+      "eye"
+    ],
+    "lucide": [
+      "eye"
+    ]
+  },
+  "filter": {
+    "category": "actions",
+    "tags": [
+      "funnel",
+      "refine",
+      "narrow"
+    ],
+    "phosphor": [
+      "funnel-simple",
+      "funnel"
+    ],
+    "lucide": [
+      "list-filter",
+      "filter"
+    ]
+  },
+  "fingerprint": {
+    "category": "status",
+    "tags": [
+      "identity",
+      "auth",
+      "biometric",
+      "security"
+    ],
+    "phosphor": [
+      "fingerprint"
+    ],
+    "lucide": [
+      "fingerprint"
+    ]
+  },
+  "flag": {
+    "category": "status",
+    "tags": [
+      "report",
+      "mark",
+      "goal",
+      "milestone"
+    ],
+    "phosphor": [
+      "flag"
+    ],
+    "lucide": [
+      "flag"
     ]
   },
   "gear": {
@@ -391,6 +706,21 @@
       "badge-help"
     ]
   },
+  "history": {
+    "category": "time",
+    "tags": [
+      "recent",
+      "past",
+      "log",
+      "undo"
+    ],
+    "phosphor": [
+      "clock-counter-clockwise"
+    ],
+    "lucide": [
+      "history"
+    ]
+  },
   "home": {
     "category": "navigation",
     "tags": [
@@ -407,6 +737,21 @@
       "home"
     ]
   },
+  "inbox": {
+    "category": "communication",
+    "tags": [
+      "tray",
+      "messages",
+      "notifications",
+      "archive"
+    ],
+    "phosphor": [
+      "tray"
+    ],
+    "lucide": [
+      "inbox"
+    ]
+  },
   "info": {
     "category": "status",
     "tags": [
@@ -420,6 +765,53 @@
     "lucide": [
       "info",
       "badge-info"
+    ]
+  },
+  "key": {
+    "category": "status",
+    "tags": [
+      "password",
+      "access",
+      "api key",
+      "credentials"
+    ],
+    "phosphor": [
+      "key"
+    ],
+    "lucide": [
+      "key-round",
+      "key"
+    ]
+  },
+  "lightbulb": {
+    "category": "status",
+    "tags": [
+      "idea",
+      "tip",
+      "suggestion",
+      "insight"
+    ],
+    "phosphor": [
+      "lightbulb"
+    ],
+    "lucide": [
+      "lightbulb"
+    ]
+  },
+  "lightning": {
+    "category": "status",
+    "tags": [
+      "zap",
+      "fast",
+      "power",
+      "quick",
+      "bolt"
+    ],
+    "phosphor": [
+      "lightning"
+    ],
+    "lucide": [
+      "zap"
     ]
   },
   "link": {
@@ -470,6 +862,54 @@
       "square-check"
     ]
   },
+  "lock": {
+    "category": "status",
+    "tags": [
+      "secure",
+      "private",
+      "password",
+      "locked"
+    ],
+    "phosphor": [
+      "lock",
+      "lock-simple"
+    ],
+    "lucide": [
+      "lock"
+    ]
+  },
+  "magic-wand": {
+    "category": "ai",
+    "tags": [
+      "magic",
+      "generate",
+      "auto",
+      "wand"
+    ],
+    "phosphor": [
+      "magic-wand"
+    ],
+    "lucide": [
+      "wand-sparkles",
+      "wand"
+    ]
+  },
+  "mail": {
+    "category": "communication",
+    "tags": [
+      "email",
+      "envelope",
+      "message",
+      "letter"
+    ],
+    "phosphor": [
+      "envelope-simple",
+      "envelope"
+    ],
+    "lucide": [
+      "mail"
+    ]
+  },
   "menu": {
     "category": "navigation",
     "tags": [
@@ -496,6 +936,20 @@
     ],
     "lucide": [
       "minus"
+    ]
+  },
+  "minus-circle": {
+    "category": "status",
+    "tags": [
+      "remove",
+      "blocked",
+      "neutral"
+    ],
+    "phosphor": [
+      "minus-circle"
+    ],
+    "lucide": [
+      "circle-minus"
     ]
   },
   "moon": {
@@ -526,6 +980,94 @@
     ],
     "lucide": [
       "panel-right"
+    ]
+  },
+  "paperclip": {
+    "category": "files",
+    "tags": [
+      "attach",
+      "attachment",
+      "clip"
+    ],
+    "phosphor": [
+      "paperclip"
+    ],
+    "lucide": [
+      "paperclip"
+    ]
+  },
+  "pause": {
+    "category": "media",
+    "tags": [
+      "stop",
+      "hold",
+      "wait"
+    ],
+    "phosphor": [
+      "pause"
+    ],
+    "lucide": [
+      "pause"
+    ]
+  },
+  "pencil": {
+    "category": "actions",
+    "tags": [
+      "edit",
+      "write",
+      "rename"
+    ],
+    "phosphor": [
+      "pencil-simple",
+      "pencil"
+    ],
+    "lucide": [
+      "pencil"
+    ]
+  },
+  "percent": {
+    "category": "charts",
+    "tags": [
+      "rate",
+      "discount",
+      "ratio",
+      "ctr"
+    ],
+    "phosphor": [
+      "percent"
+    ],
+    "lucide": [
+      "percent"
+    ]
+  },
+  "pin": {
+    "category": "actions",
+    "tags": [
+      "pushpin",
+      "keep",
+      "favourite",
+      "stick"
+    ],
+    "phosphor": [
+      "push-pin"
+    ],
+    "lucide": [
+      "pin"
+    ]
+  },
+  "play": {
+    "category": "media",
+    "tags": [
+      "start",
+      "run",
+      "go",
+      "video"
+    ],
+    "phosphor": [
+      "play"
+    ],
+    "lucide": [
+      "play"
     ]
   },
   "plus": {
@@ -560,6 +1102,40 @@
       "loader"
     ]
   },
+  "refresh": {
+    "category": "actions",
+    "tags": [
+      "reload",
+      "sync",
+      "retry",
+      "rotate",
+      "redo"
+    ],
+    "phosphor": [
+      "arrow-clockwise",
+      "arrows-clockwise"
+    ],
+    "lucide": [
+      "rotate-cw",
+      "refresh-cw"
+    ]
+  },
+  "scan": {
+    "category": "actions",
+    "tags": [
+      "scanner",
+      "capture",
+      "focus",
+      "frame"
+    ],
+    "phosphor": [
+      "scan"
+    ],
+    "lucide": [
+      "scan",
+      "scan-line"
+    ]
+  },
   "search": {
     "category": "navigation",
     "tags": [
@@ -573,6 +1149,65 @@
     ],
     "lucide": [
       "search"
+    ]
+  },
+  "send": {
+    "category": "communication",
+    "tags": [
+      "paper plane",
+      "submit",
+      "message"
+    ],
+    "phosphor": [
+      "paper-plane-tilt",
+      "paper-plane-right"
+    ],
+    "lucide": [
+      "send"
+    ]
+  },
+  "share": {
+    "category": "actions",
+    "tags": [
+      "network",
+      "connect",
+      "social"
+    ],
+    "phosphor": [
+      "share-network"
+    ],
+    "lucide": [
+      "share-2"
+    ]
+  },
+  "shield": {
+    "category": "status",
+    "tags": [
+      "security",
+      "protect",
+      "safe",
+      "guard"
+    ],
+    "phosphor": [
+      "shield"
+    ],
+    "lucide": [
+      "shield"
+    ]
+  },
+  "shield-check": {
+    "category": "status",
+    "tags": [
+      "secure",
+      "verified",
+      "protected",
+      "privacy"
+    ],
+    "phosphor": [
+      "shield-check"
+    ],
+    "lucide": [
+      "shield-check"
     ]
   },
   "sidebar": {
@@ -619,6 +1254,69 @@
       "log-out"
     ]
   },
+  "sliders": {
+    "category": "actions",
+    "tags": [
+      "settings",
+      "adjust",
+      "controls",
+      "options",
+      "tune"
+    ],
+    "phosphor": [
+      "sliders-horizontal",
+      "faders-horizontal"
+    ],
+    "lucide": [
+      "sliders-horizontal",
+      "settings-2"
+    ]
+  },
+  "smiley": {
+    "category": "people",
+    "tags": [
+      "happy",
+      "positive",
+      "emoji",
+      "sentiment"
+    ],
+    "phosphor": [
+      "smiley"
+    ],
+    "lucide": [
+      "smile"
+    ]
+  },
+  "smiley-meh": {
+    "category": "people",
+    "tags": [
+      "neutral",
+      "okay",
+      "emoji",
+      "sentiment"
+    ],
+    "phosphor": [
+      "smiley-meh"
+    ],
+    "lucide": [
+      "meh"
+    ]
+  },
+  "smiley-sad": {
+    "category": "people",
+    "tags": [
+      "unhappy",
+      "negative",
+      "emoji",
+      "sentiment"
+    ],
+    "phosphor": [
+      "smiley-sad"
+    ],
+    "lucide": [
+      "frown"
+    ]
+  },
   "sort": {
     "category": "actions",
     "tags": [
@@ -631,6 +1329,54 @@
     ],
     "lucide": [
       "arrow-up-down"
+    ]
+  },
+  "sparkle": {
+    "category": "ai",
+    "tags": [
+      "ai",
+      "magic",
+      "new",
+      "star",
+      "shine"
+    ],
+    "phosphor": [
+      "sparkle"
+    ],
+    "lucide": [
+      "sparkle",
+      "sparkles"
+    ]
+  },
+  "spinner": {
+    "category": "status",
+    "tags": [
+      "loading",
+      "loader",
+      "progress",
+      "wait"
+    ],
+    "phosphor": [
+      "spinner",
+      "circle-notch",
+      "spinner-gap"
+    ],
+    "lucide": [
+      "loader-circle"
+    ]
+  },
+  "stop": {
+    "category": "media",
+    "tags": [
+      "end",
+      "halt",
+      "square"
+    ],
+    "phosphor": [
+      "stop"
+    ],
+    "lucide": [
+      "square"
     ]
   },
   "sun": {
@@ -646,6 +1392,144 @@
     ],
     "lucide": [
       "sun"
+    ]
+  },
+  "table": {
+    "category": "content",
+    "tags": [
+      "grid",
+      "spreadsheet",
+      "rows",
+      "data"
+    ],
+    "phosphor": [
+      "table"
+    ],
+    "lucide": [
+      "table",
+      "table-2"
+    ]
+  },
+  "tag": {
+    "category": "commerce",
+    "tags": [
+      "label",
+      "price",
+      "category"
+    ],
+    "phosphor": [
+      "tag",
+      "tag-simple"
+    ],
+    "lucide": [
+      "tag"
+    ]
+  },
+  "target": {
+    "category": "status",
+    "tags": [
+      "goal",
+      "aim",
+      "focus",
+      "bullseye"
+    ],
+    "phosphor": [
+      "target"
+    ],
+    "lucide": [
+      "target"
+    ]
+  },
+  "thumbs-up": {
+    "category": "status",
+    "tags": [
+      "like",
+      "good",
+      "approve",
+      "yes"
+    ],
+    "phosphor": [
+      "thumbs-up"
+    ],
+    "lucide": [
+      "thumbs-up"
+    ]
+  },
+  "trash": {
+    "category": "actions",
+    "tags": [
+      "delete",
+      "remove",
+      "bin",
+      "garbage"
+    ],
+    "phosphor": [
+      "trash",
+      "trash-simple"
+    ],
+    "lucide": [
+      "trash-2",
+      "trash"
+    ]
+  },
+  "trend-down": {
+    "category": "charts",
+    "tags": [
+      "decline",
+      "decrease",
+      "down",
+      "drop"
+    ],
+    "phosphor": [
+      "trend-down"
+    ],
+    "lucide": [
+      "trending-down"
+    ]
+  },
+  "trend-up": {
+    "category": "charts",
+    "tags": [
+      "growth",
+      "increase",
+      "up",
+      "rise"
+    ],
+    "phosphor": [
+      "trend-up"
+    ],
+    "lucide": [
+      "trending-up"
+    ]
+  },
+  "undo": {
+    "category": "actions",
+    "tags": [
+      "back",
+      "revert",
+      "reset"
+    ],
+    "phosphor": [
+      "arrow-u-up-left",
+      "arrow-counter-clockwise"
+    ],
+    "lucide": [
+      "undo-2"
+    ]
+  },
+  "upload": {
+    "category": "actions",
+    "tags": [
+      "import",
+      "send",
+      "attach"
+    ],
+    "phosphor": [
+      "upload-simple",
+      "upload"
+    ],
+    "lucide": [
+      "upload"
     ]
   },
   "user": {
@@ -691,6 +1575,21 @@
     ],
     "lucide": [
       "users"
+    ]
+  },
+  "warning": {
+    "category": "status",
+    "tags": [
+      "alert",
+      "caution",
+      "danger",
+      "triangle"
+    ],
+    "phosphor": [
+      "warning"
+    ],
+    "lucide": [
+      "triangle-alert"
     ]
   },
   "x": {

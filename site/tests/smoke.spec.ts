@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('search filters the grid', async ({ page }) => {
   await page.goto('./');
   expect(await page.locator('#grid li:not([hidden])').count()).toBeGreaterThan(40);
-  await page.fill('#q', 'settings');
+  await page.fill('#q', 'cog');
   await expect(page.locator('#grid li:not([hidden])')).toHaveCount(1);
   await expect(page.locator('#grid li:not([hidden])')).toHaveAttribute('data-name', 'gear');
   await page.fill('#q', 'zzzz');

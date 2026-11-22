@@ -1,7 +1,7 @@
 # Plume Icons
 
 Soft, rounded icons with a line and a fill version of each, for plain SVG, React (Next.js), Astro and Iconify.
-<!-- count:start -->47<!-- count:end --> icons so far, MIT licensed.
+<!-- count:start -->105<!-- count:end --> icons so far, MIT licensed.
 
 **Browse and copy icons:** https://yash-ceo-ai.github.io/plume-icons/
 
@@ -114,52 +114,110 @@ Every icon follows these, and `npm run check` enforces the ones a script can che
 <!-- map:start -->
 | Plume | Phosphor | Lucide |
 |---|---|---|
+| `alert-circle` | `warning-circle` | `circle-alert` |
 | `arrow-down` | `arrow-down` | `arrow-down` |
 | `arrow-left` | `arrow-left` | `arrow-left` |
 | `arrow-right` | `arrow-right` | `arrow-right` |
 | `arrow-up` | `arrow-up` | `arrow-up` |
 | `arrow-up-right` | `arrow-up-right` | `arrow-up-right` |
+| `arrows-left-right` | `arrows-left-right` | `arrow-left-right` |
+| `badge-check` | `seal-check` | `badge-check` |
 | `bell` | `bell` | `bell` |
 | `bell-ring` | `bell-ringing` | `bell-ring` |
 | `bot` | `robot` | `bot` |
 | `brand` | `buildings`, `diamond` | `building-2`, `gem` |
 | `calendar` | `calendar-blank`, `calendar` | `calendar` |
+| `calendar-clock` | `calendar-dots`, `calendar-clock` | `calendar-clock` |
 | `caret-down` | `caret-down` | `chevron-down` |
 | `caret-left` | `caret-left` | `chevron-left` |
 | `caret-right` | `caret-right` | `chevron-right` |
 | `caret-up` | `caret-up` | `chevron-up` |
 | `caret-up-down` | `caret-up-down` | `chevrons-up-down` |
+| `chart-bar` | `chart-bar`, `chart-bar-horizontal` | `chart-column`, `chart-no-axes-column` |
+| `chart-line` | `chart-line`, `chart-line-up` | `chart-line`, `chart-spline` |
+| `chart-pie` | `chart-pie-slice`, `chart-pie` | `chart-pie` |
 | `chats` | `chats`, `chat-circle-text`, `chat-centered-text` | `messages-square` |
 | `check` | `check` | `check` |
+| `check-circle` | `check-circle` | `circle-check`, `circle-check-big` |
+| `circle-dashed` | `circle-dashed` | `circle-dashed` |
+| `clock` | `clock` | `clock` |
+| `coins` | `coins` | `coins` |
+| `copy` | `copy` | `copy` |
+| `crown` | `crown`, `crown-simple` | `crown` |
+| `cursor` | `cursor`, `navigation-arrow` | `mouse-pointer-2`, `mouse-pointer` |
 | `dashboard` | `layout` | `layout-dashboard`, `layout-panel-left` |
 | `dots` | `dots-three` | `ellipsis` |
 | `dots-vertical` | `dots-three-vertical` | `ellipsis-vertical` |
+| `download` | `download-simple`, `download` | `download` |
+| `edit` | `note-pencil`, `pencil-simple-line` | `square-pen`, `file-pen-line` |
 | `expand` | `arrows-out` | `expand`, `maximize-2` |
 | `external-link` | `arrow-square-out` | `external-link`, `square-arrow-out-up-right` |
+| `eye` | `eye` | `eye` |
+| `filter` | `funnel-simple`, `funnel` | `list-filter`, `filter` |
+| `fingerprint` | `fingerprint` | `fingerprint` |
+| `flag` | `flag` | `flag` |
 | `gear` | `gear`, `gear-six` | `settings`, `cog` |
 | `globe` | `globe`, `globe-simple` | `globe`, `earth` |
 | `grid` | `squares-four` | `layout-grid` |
 | `help` | `question` | `circle-help`, `badge-help` |
+| `history` | `clock-counter-clockwise` | `history` |
 | `home` | `house`, `house-simple` | `house`, `home` |
+| `inbox` | `tray` | `inbox` |
 | `info` | `info` | `info`, `badge-info` |
+| `key` | `key` | `key-round`, `key` |
+| `lightbulb` | `lightbulb` | `lightbulb` |
+| `lightning` | `lightning` | `zap` |
 | `link` | `link`, `link-simple` | `link`, `link-2` |
 | `list` | `list-bullets` | `list` |
 | `list-checks` | `list-checks`, `check-square` | `list-checks`, `square-check` |
+| `lock` | `lock`, `lock-simple` | `lock` |
+| `magic-wand` | `magic-wand` | `wand-sparkles`, `wand` |
+| `mail` | `envelope-simple`, `envelope` | `mail` |
 | `menu` | `list` | `menu` |
 | `minus` | `minus` | `minus` |
+| `minus-circle` | `minus-circle` | `circle-minus` |
 | `moon` | `moon` | `moon` |
 | `panel-right` | `sidebar` | `panel-right` |
+| `paperclip` | `paperclip` | `paperclip` |
+| `pause` | `pause` | `pause` |
+| `pencil` | `pencil-simple`, `pencil` | `pencil` |
+| `percent` | `percent` | `percent` |
+| `pin` | `push-pin` | `pin` |
+| `play` | `play` | `play` |
 | `plus` | `plus` | `plus` |
 | `radar` | `pulse`, `circle-notch` | `radar`, `loader` |
+| `refresh` | `arrow-clockwise`, `arrows-clockwise` | `rotate-cw`, `refresh-cw` |
+| `scan` | `scan` | `scan`, `scan-line` |
 | `search` | `magnifying-glass` | `search` |
+| `send` | `paper-plane-tilt`, `paper-plane-right` | `send` |
+| `share` | `share-network` | `share-2` |
+| `shield` | `shield` | `shield` |
+| `shield-check` | `shield-check` | `shield-check` |
 | `sidebar` | `sidebar-simple` | `panel-left` |
 | `sign-in` | `sign-in` | `log-in` |
 | `sign-out` | `sign-out` | `log-out` |
+| `sliders` | `sliders-horizontal`, `faders-horizontal` | `sliders-horizontal`, `settings-2` |
+| `smiley` | `smiley` | `smile` |
+| `smiley-meh` | `smiley-meh` | `meh` |
+| `smiley-sad` | `smiley-sad` | `frown` |
 | `sort` | `arrows-down-up` | `arrow-up-down` |
+| `sparkle` | `sparkle` | `sparkle`, `sparkles` |
+| `spinner` | `spinner`, `circle-notch`, `spinner-gap` | `loader-circle` |
+| `stop` | `stop` | `square` |
 | `sun` | `sun` | `sun` |
+| `table` | `table` | `table`, `table-2` |
+| `tag` | `tag`, `tag-simple` | `tag` |
+| `target` | `target` | `target` |
+| `thumbs-up` | `thumbs-up` | `thumbs-up` |
+| `trash` | `trash`, `trash-simple` | `trash-2`, `trash` |
+| `trend-down` | `trend-down` | `trending-down` |
+| `trend-up` | `trend-up` | `trending-up` |
+| `undo` | `arrow-u-up-left`, `arrow-counter-clockwise` | `undo-2` |
+| `upload` | `upload-simple`, `upload` | `upload` |
 | `user` | `user` | `user` |
 | `user-plus` | `user-plus` | `user-plus` |
 | `users` | `users` | `users` |
+| `warning` | `warning` | `triangle-alert` |
 | `x` | `x` | `x` |
 <!-- map:end -->
 

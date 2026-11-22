@@ -1,7 +1,7 @@
 // Installs and builds examples/astro and examples/next against the current dist/, then checks their HTML:
 // every icon rendered, mask ids unique, no unresolved placeholders. Run after npm run build: npm run test:examples
 import { execSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
 
@@ -21,6 +21,8 @@ function checkHtml(label, html) {
 for (const ex of ['astro', 'next']) {
   const dir = join(root, 'examples', ex);
   // install-links=true (.npmrc) copies plume-icons from the repo root, so reinstall it to pick up the new dist/.
+  // npm skips a same-version file: dependency, so drop the old copies first.
+  for (const p of ['node_modules/plume-icons', 'node_modules/@iconify-json/plume']) rmSync(join(dir, p), { recursive: true, force: true });
   run('npm install --no-audit --no-fund', dir);
   run('npm install --no-audit --no-fund --no-save plume-icons@file:../..', dir);
   if (ex === 'astro') {

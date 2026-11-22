@@ -57,7 +57,8 @@
     "test:pack": "node scripts/smoke-pack.mjs",
     "test:examples": "node scripts/test-examples.mjs",
     "prepublishOnly": "npm test && npm run test:types",
-    "readme": "node scripts/readme.mjs"
+    "readme": "node scripts/readme.mjs",
+    "coverage": "node scripts/coverage.mjs"
   },
   "peerDependencies": {
     "astro": ">=4",

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "sync": "npm install --no-audit --no-fund --no-save plume-icons@file:..",
+    "sync": "rm -rf node_modules/plume-icons && npm install --no-audit --no-fund --no-save plume-icons@file:..",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
