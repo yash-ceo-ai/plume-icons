@@ -27,7 +27,10 @@ jobs:
       # The built package is attached to the GitHub release, so it can be installed without npm:
       # npm install https://github.com/yash-ceo-ai/plume-icons/releases/download/vX.Y.Z/plume-icons-X.Y.Z.tgz
       - name: GitHub release with the package attached
-        run: gh release create "$GITHUB_REF_NAME" plume-icons-*.tgz --title "$GITHUB_REF_NAME" --notes "See CHANGELOG.md. Install: npm install https://github.com/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME/plume-icons-${GITHUB_REF_NAME#v}.tgz" --verify-tag
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          url="https://github.com/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME/plume-icons-$v.tgz"
+          gh release create "$GITHUB_REF_NAME" plume-icons-*.tgz --title "$GITHUB_REF_NAME" --verify-tag --notes "See CHANGELOG.md. Install without npm: npm install $url"
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Publish to npm (when the NPM_TOKEN secret is set)
